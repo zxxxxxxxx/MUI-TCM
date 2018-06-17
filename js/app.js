@@ -8,8 +8,8 @@
 
   // EDITING STARTS HERE (you dont need to edit anything above this line)
 
-  var db = new PouchDB('todos');
-  var remoteCouch = 'https://d39f64bb-b370-4ca8-84d2-70ecf2bfe2bc-bluemix:9ce8a9c23ac8f6df065abc280681051f1072a1ae47bc34acc5dfc1055d83b178@d39f64bb-b370-4ca8-84d2-70ecf2bfe2bc-bluemix.cloudant.com/todos/_all_docs?include_docs=true';
+  var db = new PouchDB('medicine');
+  var remoteCouch = 'https://d39f64bb-b370-4ca8-84d2-70ecf2bfe2bc-bluemix:9ce8a9c23ac8f6df065abc280681051f1072a1ae47bc34acc5dfc1055d83b178@d39f64bb-b370-4ca8-84d2-70ecf2bfe2bc-bluemix.cloudant.com/medicine';
 
   db.changes({
     since: 'now',
@@ -97,11 +97,11 @@
   function createTodoListItem(todo) {
     var p = document.createElement('p');
     p.className = 'mui-ellipsis';
-    p.appendChild(document.createTextNode(todo.title));
+    p.appendChild(document.createTextNode(todo.pinyin));
 
     var divDisplay = document.createElement('div');
     divDisplay.className = 'mui-media-body';
-    divDisplay.appendChild(document.createTextNode(todo.title));
+    divDisplay.appendChild(document.createTextNode(todo.name));
     divDisplay.appendChild(p);
 
     var img = document.createElement('img');
@@ -115,8 +115,9 @@
 
     var li = document.createElement('li');
     li.className = 'mui-table-view-cell mui-media';
-    li.id = 'li_' + todo.title;
+    li.id = 'li_' + todo._id;
     li.appendChild(a);
+
     return li;
   }
 
