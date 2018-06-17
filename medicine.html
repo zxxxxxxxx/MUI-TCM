@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/mui.min.css">
 	<!--App自定义的css-->
 	<link rel="stylesheet" type="text/css" href="css/app.css" />
+	<link rel="stylesheet" href="css/base.css">
 	<style>
 		.title {
 			margin: 20px 15px 10px;
@@ -24,11 +25,16 @@
 <body>
 	<header class="mui-bar mui-bar-nav">
 		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">药</h1>
+		<h1 class="mui-title">药</h1>
 	</header>
+
 	<div class="mui-content">
 		<div class="title" style="color:#c15d3e">
 			大家都在看
+		</div>
+		<div id="sync-wrapper">
+			<div id="sync-success">Currently syncing</div>
+			<div id="sync-error">There was a problem syncing</div>
 		</div>
 		<ul class="mui-table-view mui-table-view-chevron" id="todo-list">
 			<!-- <li class="mui-table-view-cell mui-media">

@@ -106,7 +106,9 @@
 
     var img = document.createElement('img');
     img.className = 'mui-media-object mui-pull-left';
-    img.src = 'images/cbd.jpg';
+    for (var filename in todo._attachments) { break; }
+    img.url = '"' + remoteCouch + '/' + todo._id + '/' + filename + '"';
+    console.log(img.url);
 
     var a = document.createElement('a');
     a.className = 'mui-navigate-right';
