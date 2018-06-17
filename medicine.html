@@ -12,12 +12,24 @@
 	<link rel="stylesheet" href="css/mui.min.css">
 	<!--App自定义的css-->
 	<link rel="stylesheet" type="text/css" href="css/app.css" />
-	<link rel="stylesheet" href="css/base.css">
 	<style>
 		.title {
 			margin: 20px 15px 10px;
 			color: #6d6d72;
 			font-size: 15px;
+		}
+
+		#sync-error,
+		#sync-success {
+			display: none;
+		}
+
+		[data-sync-state=syncing] #sync-success {
+			display: block;
+		}
+
+		[data-sync-state=error] #sync-error {
+			display: block;
 		}
 	</style>
 </head>
