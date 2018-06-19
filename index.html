@@ -63,6 +63,15 @@
         .mui-bar-tab .mui-tab-item.mui-active {
             color: #c15d3e;
         }
+        
+        @font-face {
+        	font-family: "MyFont";
+        	src: url("fonts/方正清刻本悦宋简.TTF");
+        }
+        
+        body {
+        	font-family: "MyFont";
+        }
     </style>
 </head>
 
@@ -139,9 +148,9 @@
                 </div>
             </div>
         </div>
-        <div id="tabbar-with-chat" class="mui-control-content">
+        <div id="tabbar-with-chat" class="mui-control-content mui-active">
             <!--这是div模式选项卡中的第2个子页面-->
-            <div id="slider" class="mui-slider" >
+            <div id="slider1" class="mui-slider" >
 			<div class="mui-slider-group mui-slider-loop">
 				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
 				<div class="mui-slider-item mui-slider-item-duplicate">
@@ -151,30 +160,30 @@
 				</div>
 				<!-- 第一张 -->
 				<div class="mui-slider-item">
-					<a href="#">
-						<img src="images/全是干货.jpg">
+					<a href="#" style="margin: 10px;">
+						<img style="border-radius: 2px;" src="images/全是干货.jpg">
 					</a>
 				</div>
 				<!-- 第二张 -->
-				<!--<div class="mui-slider-item">
-					<a href="#">
-						<img src="images/跟师抄方.jpg">
+				<div class="mui-slider-item">
+					<a href="#" style="margin: 10px;">
+						<img style="border-radius: 2px;" src="images/跟师抄方.jpg">
 					</a>
-				</div>-->
+				</div>
 				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-				<!--<div class="mui-slider-item mui-slider-item-duplicate">
-					<a href="#">
-						<img src="images/全是干货.jpg">
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#" style="margin: 10px;">
+						<img style="border-radius: 2px;" src="images/全是干货.jpg">
 					</a>
-				</div>-->
+				</div>
 			</div>
 			<div class="mui-slider-indicator">
 				<div class="mui-indicator mui-active"></div>
-				<!--<div class="mui-indicator"></div>-->
+				<div class="mui-indicator"></div>
 			</div>
 		</div>
             <div class="mui-content">
-                <ul class="mui-table-view mui-grid-view mui-grid-9">
+                <ul class="mui-table-view mui-grid-view mui-grid-9" style="margin-top: 0px;">
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style>
                         <!-- <a href="test.html"> -->
                         <a href="medicine-list.html">
@@ -380,17 +389,13 @@
         swipeBack: true //启用右滑关闭功能
     });
     var slider = mui("#slider");
-    //		document.getElementById("switch").addEventListener('toggle', function(e) {
-    //			if(e.detail.isActive) {
     slider.slider({
         interval: 5000
     });
-		//			} else {
-		//				slider.slider({
-		//					interval: 0
-		//				});
-		//			}
-		//		});
+    var slider1 = mui("#slider1");
+    slider1.slider({
+        interval: 5000
+    });
 </script>
 
 </html>

@@ -127,13 +127,14 @@
   function createTodoListItem(page, todo) {
     var div1 = document.createElement('div');
     div1.className = 'medicine-title';
-    var title = ['性味功效', '常用方', '来原产地', '']
+    var title = ['性味功效', '常用方', '来源产地', ''];
+    var arr = [todo.abstract, todo.application, todo.source, todo.process];
     div1.appendChild(document.createTextNode(title[page - 1]));
 
     var li = document.createElement('li');
     li.className = 'mui-table-view-cell';
     li.appendChild(div1);
-    todo.effect.forEach(function (effect) {
+    arr[page - 1].forEach(function (effect) {
       var div2 = document.createElement('div');
       var br = document.createElement('br');
 
@@ -157,25 +158,39 @@
     // todos.forEach(function (todo) {
     //   ul.appendChild(createTodoListItem(todo.doc));
     // });
-    var ul = document.getElementById('todo-list');
-    ul.innerHTML = '';
+    var ul1 = document.getElementById('abstract');
+    ul1.innerHTML = '';
     // todos.forEach(function (todo) {
     // console.log(todos);
     // ul.appendChild(createTodoListItem(todos));
-    ul.appendChild(createMedicineImage(todos));
-    ul.appendChild(createMedicinePronounce(todos));
-    ul.appendChild(createTodoListItem(1, todos));
+    ul1.appendChild(createMedicineImage(todos));
+    ul1.appendChild(createMedicinePronounce(todos));
+    ul1.appendChild(createTodoListItem(1, todos));
     // });
+
+    var ul2 = document.getElementById('application');
+    ul2.innerHTML = '';
+    ul2.appendChild(createTodoListItem(2, todos));
+
+
+    var ul3 = document.getElementById('source');
+    ul3.innerHTML = '';
+    ul3.appendChild(createTodoListItem(3, todos));
+
+
+    var ul4 = document.getElementById('process');
+    ul4.innerHTML = '';
+    ul4.appendChild(createTodoListItem(4, todos));
   }
 
-  function redrawTodosUIPage(page, todos) {
-    var ul = document.createElement('ul');
-    ul.className = 'mui-table-view';
+  // function redrawTodosUIPage(page, todos) {
+  //   var ul = document.createElement('ul');
+  //   ul.className = 'mui-table-view';
 
-    ul.appendChild(createTodoListItem(page, todos));
-    // console.log(ul.innerHTML);
-    return ul.innerHTML;
-  }
+  //   ul.appendChild(createTodoListItem(page, todos));
+  //   // console.log(ul.innerHTML);
+  //   return ul.innerHTML;
+  // }
 
   function newTodoKeyPressHandler(event) {
     if (event.keyCode === ENTER_KEY) {

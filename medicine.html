@@ -40,6 +40,19 @@
 			color: #b19985;
 			line-height: 40px;
 		}
+
+		@font-face {
+			font-family: "MyFont";
+			src: url("fonts/方正清刻本悦宋简.TTF");
+		}
+
+		body {
+			font-family: "MyFont";
+		}
+
+		.title {
+			font-family: "微软雅黑";
+		}
 	</style>
 	<header class="mui-bar mui-bar-nav">
 		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
@@ -62,12 +75,12 @@
 				</a>
 			</div>
 			<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3"></div>
-			<div class="mui-slider-group" style="background-color: blu">
+			<div class="mui-slider-group" onclick="redrawTodosUIPage(2)">
 				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
 					<div id="scroll1" class="mui-scroll-wrapper">
 						<div class="mui-scroll">
-							<ul class="mui-table-view" id="todo-list">
-								<li class="mui-table-view-cell">
+							<ul class="mui-table-view" id="abstract">
+								<!--<li class="mui-table-view-cell">
 									<img src="images/baizhu.jpg">
 								</li>
 								<li class="mui-table-view-cell">
@@ -96,7 +109,7 @@
 										<br />
 										<br /> （叶天士：《本经》不分苍、白，功用正同。宋元以来始分用，谓白术苦甘气和，补中焦，除脾胃湿，用以止汗；苍术苦辛气烈，能上行，除上湿，发汗功大。）
 									</div>
-								</li>
+								</li>-->
 							</ul>
 						</div>
 					</div>
@@ -104,11 +117,11 @@
 				<div id="item2mobile" class="mui-slider-item mui-control-content">
 					<div id="scroll2" class="mui-scroll-wrapper">
 						<div class="mui-scroll">
-							<div class="mui-loading">
+							<!--<div class="mui-loading">
 								<div class="mui-spinner">
 								</div>
-							</div>
-							<!-- <ul class="mui-table-view" id="application">
+							</div>-->
+							<ul class="mui-table-view" id="application">
 								<li class="mui-table-view-cell">
 									<div class="medicine-title">
 										常用方
@@ -122,7 +135,7 @@
 										<br />
 									</div>
 								</li>
-							</ul> -->
+							</ul>
 						</div>
 					</div>
 
@@ -130,10 +143,25 @@
 				<div id="item3mobile" class="mui-slider-item mui-control-content">
 					<div id="scroll3" class="mui-scroll-wrapper">
 						<div class="mui-scroll">
-							<div class="mui-loading">
+							<!-- <div class="mui-loading">
 								<div class="mui-spinner">
 								</div>
-							</div>
+							</div> -->
+							<ul class="mui-table-view" id="source">
+								<li class="mui-table-view-cell">
+									<div class="medicine-title">
+										来源产地
+									</div>
+									<div>
+										<span class="medicine-small-title">
+											《神农本草经》
+										</span>
+										<br /> 味苦，温。主风寒湿痹死肌，痉疸，止汗，除热，消食，作煎饵。久服轻身延年，不饥。
+										<br />
+										<br />
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 
@@ -141,37 +169,28 @@
 				<div id="item4mobile" class="mui-slider-item mui-control-content">
 					<div id="scroll4" class="mui-scroll-wrapper">
 						<div class="mui-scroll">
-							<div class="mui-loading">
+							<!-- <div class="mui-loading">
 								<div class="mui-spinner">
 								</div>
-							</div>
+							</div> -->
+							<ul class="mui-table-view" id="process">
+								<li class="mui-table-view-cell">
+									<div>
+										<span class="medicine-small-title">
+											《神农本草经》
+										</span>
+										<br /> 味苦，温。主风寒湿痹死肌，痉疸，止汗，除热，消食，作煎饵。久服轻身延年，不饥。
+										<br />
+										<br />
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 
 				</div>
 			</div>
 		</div>
-
-		<!--<h5 class="mui-content-padded">Color</h5>
-			<div class="mui-card">
-				<form class="mui-input-group">
-					<div class="mui-input-row mui-radio">
-						<label><span class="mui-bg-primary" style="display:block;width:25px;height:25px;"></span>
-						</label>
-						<input name="radio1" type="radio" checked value="primary">
-					</div>
-					<div class="mui-input-row mui-radio">
-						<label><span class="mui-bg-positive" style="display:block;width:25px;height:25px;"></span>
-						</label>
-						<input name="radio1" type="radio" value="positive">
-					</div>
-					<div class="mui-input-row mui-radio">
-						<label><span class="mui-bg-negative" style="display:block;width:25px;height:25px;"></span>
-						</label>
-						<input name="radio1" type="radio" value="negative">
-					</div>
-				</form>
-			</div>-->
 
 	</div>
 	<script src="js/mui.min.js"></script>
@@ -180,14 +199,6 @@
 	<script src="js/base.js"></script>
 	<script src="js/medicine.js"></script>
 	<script>
-		// window.onload = function () {
-		// 	var html2 = redrawTodosUI(2);
-		// 	// var fun = abc; //引用abc函数
-		// 	// fun(123);
-		// };
-		function {
-			var html2 = redrawTodosUIPage(2);
-		});
 		mui.init({
 			swipeBack: false
 		});
@@ -195,42 +206,6 @@
 			$('.mui-scroll-wrapper').scroll({
 				indicators: true //是否显示滚动条
 			});
-			// var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
-			var html2 = redrawTodosUIPage(2);
-			var html3 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
-			var html4 = '<ul class="mui-table-view"><li class="mui-table-view-cell">第三个选项卡子项-1</li><li class="mui-table-view-cell">第三个选项卡子项-2</li><li class="mui-table-view-cell">第三个选项卡子项-3</li><li class="mui-table-view-cell">第三个选项卡子项-4</li><li class="mui-table-view-cell">第三个选项卡子项-5</li></ul>';
-			var item2 = document.getElementById('item2mobile');
-			var item3 = document.getElementById('item3mobile');
-			var item4 = document.getElementById('item4mobile');
-			document.getElementById('slider').addEventListener('slide', function (e) {
-				if (e.detail.slideNumber === 1) {
-					if (item2.querySelector('.mui-loading')) {
-						setTimeout(function () {
-							item2.querySelector('.mui-scroll').innerHTML = html2;
-						}, 500);
-					}
-				} else if (e.detail.slideNumber === 2) {
-					if (item3.querySelector('.mui-loading')) {
-						setTimeout(function () {
-							item3.querySelector('.mui-scroll').innerHTML = html3;
-						}, 500);
-					}
-				} else if (e.detail.slideNumber === 3) {
-					if (item3.querySelector('.mui-loading')) {
-						setTimeout(function () {
-							item4.querySelector('.mui-scroll').innerHTML = html4;
-						}, 500);
-					}
-				}
-			});
-			//				var sliderSegmentedControl = document.getElementById('sliderSegmentedControl');
-			//				$('.mui-input-group').on('change', 'input', function() {
-			//					if(this.checked) {
-			//						sliderSegmentedControl.className = 'mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-' + this.value;
-			//						//force repaint
-			//						sliderProgressBar.setAttribute('style', sliderProgressBar.getAttribute('style'));
-			//					}
-			//				});
 		})(mui);
 	</script>
 </body>
