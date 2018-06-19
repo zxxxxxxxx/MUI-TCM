@@ -158,6 +158,10 @@
     // todos.forEach(function (todo) {
     //   ul.appendChild(createTodoListItem(todo.doc));
     // });
+    var h = document.getElementById('medicine-header');
+    h.innerHTML = '';
+    h.appendChild(document.createTextNode(todos.name));
+
     var ul1 = document.getElementById('abstract');
     ul1.innerHTML = '';
     // todos.forEach(function (todo) {
