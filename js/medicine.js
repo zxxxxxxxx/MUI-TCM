@@ -10,6 +10,7 @@
 
   var db = new PouchDB('medicine');
   var remoteCouch = 'https://d39f64bb-b370-4ca8-84d2-70ecf2bfe2bc-bluemix:9ce8a9c23ac8f6df065abc280681051f1072a1ae47bc34acc5dfc1055d83b178@d39f64bb-b370-4ca8-84d2-70ecf2bfe2bc-bluemix.cloudant.com/medicine';
+  var id = window.location.search.split("id=")[1];
 
   db.changes({
     since: 'now',
@@ -33,8 +34,9 @@
 
   // Show the current list of todos by reading them from the database
   function showTodos() {
-    db.allDocs({ include_docs: true}, function (err, doc) {
-      redrawTodosUI(doc.rows);
+    db.get(id).then(function (doc) {
+      redrawTodosUI(doc);
+      // console.log(doc);
     });
   }
 
@@ -92,33 +94,59 @@
     }
   }
 
-  // Given an object representing a todo, this will create a list item
-  // to display it.
-  function createTodoListItem(todo) {
-    var p = document.createElement('p');
-    p.className = 'mui-ellipsis';
-    p.appendChild(document.createTextNode(todo.pinyin));
-
-    var divDisplay = document.createElement('div');
-    divDisplay.className = 'mui-media-body';
-    divDisplay.appendChild(document.createTextNode(todo.name));
-    divDisplay.appendChild(p);
-
+  function createMedicineImage(todo) {
     var img = document.createElement('img');
-    img.className = 'mui-media-object mui-pull-left';
-    img.style = 'width:80px';
     img.src = 'images/' + todo._id + '.jpg';
 
-    var a = document.createElement('a');
-    a.className = 'mui-navigate-right';
-    a.href = 'medicine.html?id=' + todo._id;
-    a.appendChild(img);
-    a.appendChild(divDisplay);
+    var li = document.createElement('li');
+    li.className = 'mui-table-view-cell';
+    li.appendChild(img);
+
+    return li;
+  }
+
+  function createMedicinePronounce(todo) {
+    var div1 = document.createElement('div');
+    div1.className = 'medicine-title';
+    div1.appendChild(document.createTextNode('拼音'));
+
+    var div2 = document.createElement('div');
+    div2.className = 'title';
+    div2.appendChild(document.createTextNode(todo.pinyin));
 
     var li = document.createElement('li');
-    li.className = 'mui-table-view-cell mui-media';
-    li.id = 'li_' + todo._id;
-    li.appendChild(a);
+    li.className = 'mui-table-view-cell';
+    li.appendChild(div1);
+    li.appendChild(div2);
+
+    return li;
+  }
+
+  // Given an object representing a todo, this will create a list item
+  // to display it.
+  function createTodoListItem(page, todo) {
+    var div1 = document.createElement('div');
+    div1.className = 'medicine-title';
+    var title = ['性味功效', '常用方', '来原产地', '']
+    div1.appendChild(document.createTextNode(title[page - 1]));
+
+    var li = document.createElement('li');
+    li.className = 'mui-table-view-cell';
+    li.appendChild(div1);
+    todo.effect.forEach(function (effect) {
+      var div2 = document.createElement('div');
+      var br = document.createElement('br');
+
+      var span = document.createElement('span');
+      span.className = 'medicine-small-title';
+      span.appendChild(document.createTextNode(effect.title));
+
+      div2.appendChild(span);
+      div2.innerHTML += effect.author + '<br />';
+      div2.innerHTML += effect.content + '<br />' + '<br />';
+      // console.log(div2.innerHTML);
+      li.appendChild(div2);
+    });
 
     return li;
   }
@@ -131,9 +159,22 @@
     // });
     var ul = document.getElementById('todo-list');
     ul.innerHTML = '';
-    todos.forEach(function (todo) {
-      ul.appendChild(createTodoListItem(todo.doc));
-    });
+    // todos.forEach(function (todo) {
+    // console.log(todos);
+    // ul.appendChild(createTodoListItem(todos));
+    ul.appendChild(createMedicineImage(todos));
+    ul.appendChild(createMedicinePronounce(todos));
+    ul.appendChild(createTodoListItem(1, todos));
+    // });
+  }
+
+  function redrawTodosUIPage(page, todos) {
+    var ul = document.createElement('ul');
+    ul.className = 'mui-table-view';
+
+    ul.appendChild(createTodoListItem(page, todos));
+    // console.log(ul.innerHTML);
+    return ul.innerHTML;
   }
 
   function newTodoKeyPressHandler(event) {

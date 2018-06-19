@@ -141,18 +141,50 @@
         </div>
         <div id="tabbar-with-chat" class="mui-control-content">
             <!--这是div模式选项卡中的第2个子页面-->
+            <div id="slider" class="mui-slider" >
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#" style="margin: 10px;">
+						<img style="border-radius: 2px;" src="images/跟师抄方.jpg">
+					</a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/全是干货.jpg">
+					</a>
+				</div>
+				<!-- 第二张 -->
+				<!--<div class="mui-slider-item">
+					<a href="#">
+						<img src="images/跟师抄方.jpg">
+					</a>
+				</div>-->
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<!--<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="images/全是干货.jpg">
+					</a>
+				</div>-->
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<!--<div class="mui-indicator"></div>-->
+			</div>
+		</div>
             <div class="mui-content">
                 <ul class="mui-table-view mui-grid-view mui-grid-9">
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style>
                         <!-- <a href="test.html"> -->
-                        <a href="medicine.html">
+                        <a href="medicine-list.html">
                             <span class="mui-icon">
                                 <img src="images/1.jpg" style="width:100%;">
                             </span>
                         </a>
                     </li>
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                        <a href="#">
+                        <a href="prescription.html">
                             <span class="mui-icon">
                                 <img src="images/2.jpg" style="width:100%;">
                             </span>
@@ -161,12 +193,12 @@
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
                         <a href="#">
                             <span class="mui-icon">
-                                <img url="images/3.jpg" style="width:100%;">
+                                <img src="images/3.jpg" style="width:100%;">
                             </span>
                         </a>
                     </li>
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                        <a href="#">
+                        <a href="patent-medicine.html">
                             <span class="mui-icon">
                                 <img src="images/4.jpg" style="width:100%;">
                             </span>
