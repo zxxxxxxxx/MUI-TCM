@@ -19,11 +19,6 @@
 				font-size: 15px;
 			}
 			
-			.mui-table-view-cell {
-				height: 60px;
-				padding-top: 15px;
-			}
-			
 			@font-face {
 				font-family: "MyFont";
 				src: url("fonts/方正清刻本悦宋简.TTF");
@@ -32,6 +27,10 @@
 			body {
 				font-family: "MyFont";
 			}
+			
+			.mui-ellipsis {
+				font-family: "微软雅黑";
+			}
 		</style>
 	</head>
 
@@ -39,95 +38,97 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<a class="mui-icon mui-icon-search mui-pull-right" id="open"></a>
-			<h1 class="mui-title">中成药</h1>
+			<h1 class="mui-title">食材</h1>
 		</header>
 
 		<div class="mui-content">
+			<!--<div class="mui-content-padded" style="margin: 5px;margin-bottom: -20px;">
+				<div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" style="background-color: white;border: solid 1px #e3e3e5;" placeholder="搜索方名、症状等">
+				</div>
+			</div>-->
 			<div class="title" style="color:#c15d3e">
 				大家都在看
 			</div>
 			<ul class="mui-table-view mui-table-view-chevron">
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/lizhi.jpg">
 						<div class="mui-media-body">
-							六味地黄丸
+							荔枝
+							<p class='mui-ellipsis'>Lì Zhī</p>
 						</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/xigua.jpg">
 						<div class="mui-media-body">
-							参苓白术散
+							西瓜
+							<p class='mui-ellipsis'>Xī Guā</p>
 						</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/yanggaowan.jpg">
 						<div class="mui-media-body">
-							归脾丸
+							羊睾丸
+							<p class='mui-ellipsis'>Yáng Gāo Wán</p>
 						</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/qiukui.jpg">
 						<div class="mui-media-body">
-							补中益气丸
+							秋葵
+							<p class='mui-ellipsis'>Qiū Kuí</p>
 						</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/shanyao.jpg">
 						<div class="mui-media-body">
-							生脉饮
+							山药
+							<p class='mui-ellipsis'>Shān Yào</p>
 						</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/yumixu.jpg">
 						<div class="mui-media-body">
-							附子理中丸
+							玉米须
+							<p class='mui-ellipsis'>Yù Mǐ Xū</p>
 						</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/yangmei.jpg">
 						<div class="mui-media-body">
-							加味逍遥丸
+							杨梅
+							<p class='mui-ellipsis'>Yáng Méi</p>
 						</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/tao.jpg">
 						<div class="mui-media-body">
-							十全大补丸
+							桃
+							<p class='mui-ellipsis'>Táo</p>
 						</div>
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="images/mangguo.jpg">
 						<div class="mui-media-body">
-							藿香正气水
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							桂枝茯苓丸
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							人参健脾丸
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							龙胆泻肝丸
+							芒果
+							<p class='mui-ellipsis'>Máng guǒ</p>
 						</div>
 					</a>
 				</li>

@@ -2,8 +2,124 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>大家中医</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+	    <link rel="stylesheet" href="css/mui.min.css">
+	    <!--App自定义的css-->
+	    <link rel="stylesheet" type="text/css" href="css/app.css" />
+	    
+	    <style>
+	    	a.mui-action-back {
+	    		color: #c6c6c6;
+	    	}
+	    	.mui-content {
+	    		margin-top: 50px;
+	    	}
+	    	.mui-col-xs-2 {
+	    		/*border-bottom: 1px solid #000;*/	    		
+	    	}
+	    	.mui-col-xs-7 {
+	    		height: 41px;
+	    		margin-right: 15px;
+	    		border-bottom: 1px solid #000;
+	    	}
+	    	.unit {
+	    		background: #f8f7f5;
+	    	}
+	    </style>
 	</head>
 	<body>
+		<header class="mui-bar mui-bar-nav">
+	        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	        <h1 class="mui-title">计量转换</h1>
+	    </header>
+    	<div class="mui-content">
+    		<div class="ancient">
+    			<center>
+    				<div class="mui-col-xs-2" style="float: left;">
+    					<select class="dynasty">
+				    	   	<option value="汉" selected="true">汉</option>
+				    	   	<option value="宋">宋</option>
+				    	</select>
+    				</div>
+    				<div class="mui-col-xs-2" style="float: right;">
+			    	    <select class="ancient-unit">
+			    	    	<option value="石">石</option>
+			    	    	<option value="斤">斤</option>
+			    	    	<option value="两" selected="true">两</option>
+			    	    </select>
+		    	   	</div>
+    				<div class="mui-col-xs-7" style="float: right;">
+	    				<input type="text" class="mui-input-clear" style="border: none;">    					
+    				</div>    				
+	    	    </center>
+    		</div>
+    		<br />
+    	    <div class="modern" style="display: inline;">
+    	    	<center>
+    	    		<div class="mui-col-xs-2" style="float: right;">
+			    	    <select class="modern-unit">
+			    	    	<option value="克" selected="true">克</option>
+			    	    </select>
+		    	   	</div>
+    	    		<div class="mui-col-xs-7" style="float: right;">
+	   	    	    	<input type="text" name="result" style="border: none;" readonly="true">
+	   	    	    </div>	   	    	    
+	    	    </center>
+    	    </div>
+       	</div>
+       	<br /><br /><br /><br /><br /><br />
+   		<div class="unit">
+   			<br >
+    	    <center style="color: #b2987f;">
+    	   		梧桐子大 = 黄豆大<br >
+				1方寸匙 = 金石类2.74克 = 药末约2克 = 草本类药末约1克<br >
+				蜀椒一升 = 50克<br >
+				半方寸匙 = 1.5克<br >
+				葶苈子一升 = 60克<br >
+    	    </center>
+    	</div>
+ 	
+    	
 	</body>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		UnitInHang = {"石":29760.0, "斤":248.0, "两":15.625};
+		UnitInSong = {"石":70800.0, "斤":590.0, "两":36.9};
+		
+		$(".ancient-unit").change(function() {
+			if(!"".equals($(".mui-input-clear").value)){
+				if($(".dynasty").val() === "汉") {
+					$("input[name='result']").val() = 
+						parseFloat($(".mui-input-clear").value) * 
+						UnitInHang[$(".ancient-unit").value];
+				} else if($(".dynasty").val() === "宋") {
+					$("input[name='result']").val() = 
+						parseFloat($(".mui-input-clear").value) * 
+						UnitInSong[$(".ancient-unit").value];
+				}
+			}
+		});
+
+		$(".mui-input-clear").change(function() {
+			if(!"".equals($(".mui-input-clear").value)){
+				if($(".dynasty").val() === "汉") {
+					$("input[name='result']").val() = 
+						parseFloat($(".mui-input-clear").value) * 
+						UnitInHang[$(".ancient-unit").value];
+				} else if($(".dynasty").val() === "宋") {
+					$("input[name='result']").val() = 
+						parseFloat($(".mui-input-clear").value) * 
+						UnitInSong[$(".ancient-unit").value];
+				}
+			} else {
+				$("input[name='result']").val() = "";
+			}
+		});
+	</script>
 </html>
