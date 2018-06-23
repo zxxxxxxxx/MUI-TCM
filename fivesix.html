@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+	</head>
+
+	<body>
+
+		<style>
+			.mui-content {
+				background-color: #f9f8f6;
+			}
+			
+			.mui-control-content {
+				background-color: #f9f8f6;
+				min-height: 215px;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
+			}
+			
+			.mui-table-view {
+				background-color: #f9f8f6;
+			}
+			
+			.medicine-title {
+				font-size: 17px;
+				color: #c15d3e;
+				line-height: 40px;
+			}
+			
+			.medicine-small-title {
+				color: #b19985;
+				line-height: 40px;
+			}
+			
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+				border: none;
+			}
+			
+			@font-face {
+				font-family: "MyFont";
+				src: url("fonts/方正清刻本悦宋简.TTF");
+			}
+			
+			body {
+				font-family: "MyFont";
+			}
+			
+			.title {
+				font-family: "微软雅黑";
+			}
+			
+			#background {
+				-webkit-animation: mymove 1s forwards;
+				/*-webkit-animation-delay: 2s;*/
+			}
+			
+			@keyframes mymove {
+				to {
+					transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					/* Internet Explorer */
+					-moz-transform: rotate(90deg);
+					/* Firefox */
+					-webkit-transform: rotate(90deg);
+					/* Safari 和 Chrome */
+					-o-transform: rotate(90deg);
+					/* Opera */
+				}
+			}
+			
+			@-webkit-keyframes mymove {
+				to {
+					transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					/* Internet Explorer */
+					-moz-transform: rotate(90deg);
+					/* Firefox */
+					-webkit-transform: rotate(90deg);
+					/* Safari 和 Chrome */
+					-o-transform: rotate(90deg);
+					/* Opera */
+				}
+			}
+		</style>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="medicine-header">五运六气</h1>
+		</header>
+		<div class="mui-content">
+			<div style="margin: 10px 0 5px;">
+				<img src="images/header.jpg" style="width: 100%;">
+			</div>
+			<!--<div id="sync-wrapper" style="display: none;">
+				<div id="sync-success">Currently syncing</div>
+				<div id="sync-error">There was a problem syncing</div>
+			</div>-->
+			<div id="slider" class="mui-slider">
+				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative" style="background-color: white;">
+					<a class="mui-control-item" href="#item1mobile">
+						六气图
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+						五运图
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+						运气五行图
+					</a>
+				</div>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+				<div class="mui-slider-group" style="height: 1000px">
+					<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div style="position: relative;"><!--这个层为外面的父层，只需设置相对位置样式即可  -->
+								  	<div style="position: absolute;"><!--这个为里面要叠加的层，只需设置绝对样式  -->
+										<img id="background" src="images/六气.png" /><!--这个为层里面的内容图片  -->
+								  	</div>  
+									<img src="images/六气.png" /><!--这个为父层内容  -->
+								</div>  
+							</div>
+						</div>
+					</div>
+					<div id="item2mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll2" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<img src="images/五运.png" />
+							</div>
+						</div>
+					</div>
+					<div id="item3mobile" class="mui-slider-item mui-control-content">
+						<div id="scroll3" class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<img src="images/运气五行图.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+			(function($) {
+				$('.mui-scroll-wrapper').scroll({
+					indicators: true //是否显示滚动条
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>
