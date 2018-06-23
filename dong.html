@@ -28,8 +28,7 @@
 			}
 			
 			.mui-grid-view.mui-grid-9 {
-				border-top: none;
-				border-left: none;
+				border: none;
 				background-color: white;
 			}
 			
@@ -39,6 +38,23 @@
 			
 			.mui-search .mui-placeholder {
 				font-size: 14px;
+				margin: 5px;
+			}
+			
+			.mui-table-view:after {
+				height: 0
+			}
+			
+			.mui-table-view:before {
+				height: 0
+			}
+			
+			.mui-table-view-divider.mui-indexed-list-group {
+				font-size: 14px;
+			}
+			
+			.mui-table-view .mui-table-view-cell.mui-media .mui-media-body {
+				font-size: 13px;
 			}
 			
 			@font-face {
@@ -60,9 +76,9 @@
 		</header>
 		<div class="mui-content">
 			<div id='list' class="mui-indexed-list">
-				<div class="mui-indexed-list-search mui-input-row mui-search mui-content-padded" style="margin: 5px;border-bottom: none;">
+				<div class="mui-indexed-list-search mui-input-row mui-search" style="margin:0 5px;padding:5px 0;border-bottom: none;">
 					<!--<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索机场">-->
-					<input type="search" class="mui-input-clear" style="background-color: white;border: solid 1px #e3e3e5;border-radius: 6px;" placeholder="搜索方名、症状等">
+					<input type="search" class="mui-input-clear" style="background-color: white;border: solid 1px #e3e3e5;border-radius: 6px;" placeholder="搜索董氏奇穴">
 				</div>
 				<div class="mui-indexed-list-bar">
 					<a>一</a>
@@ -82,157 +98,402 @@
 				<div class="mui-indexed-list-inner">
 					<div class="mui-indexed-list-empty-alert">没有数据</div>
 					<ul class="mui-table-view">
-						<li data-group="肺" class="mui-table-view-divider mui-indexed-list-group">一一手指部位</li>
+						<li data-group="一" class="mui-table-view-divider mui-indexed-list-group">一一手指部位</li>
 						<ul class="mui-table-view mui-grid-view mui-grid-9">
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									大间穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									小间穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									浮间穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									外间穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									中间穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									木穴
 								</div>
 							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									脾肿穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									心常穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									三眼穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									复原穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									木炎穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									还巢穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									眼黄穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									火膝穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									指肾穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									指三重穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									胆穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									二角明穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									心膝穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									肺心穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									木火穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									指五金穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									指千金穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									指驷马穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									妇科穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									制污穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									止涎穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									五虎穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									重仙穴
+								</div>
+							</li>
 						</ul>
-						<li data-group="大" class="mui-table-view-divider mui-indexed-list-group">二二手掌部位</li>
+						<li data-group="二" class="mui-table-view-divider mui-indexed-list-group">二二手掌部位</li>
 						<ul class="mui-table-view mui-grid-view mui-grid-9">
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									重子穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									上白穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									大白穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									灵骨穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									中白穴
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									下白穴
 								</div>
 							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									腕顺一穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									腕顺二穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									手解穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									土水穴
+								</div>
+							</li>
 						</ul>
-						<li data-group="三" class="mui-table-view-divider mui-indexed-list-group">三</li>
-						<li data-value="NBS" data-tags="ChangBaiShan" class="mui-table-view-cell mui-indexed-list-item">长白山机场</li>
-						<li data-value="CGQ" data-tags="ChangChunLongJiaGuoJi" class="mui-table-view-cell mui-indexed-list-item">长春龙嘉国际机场</li>
-						<li data-value="CGD" data-tags="ChangDeTaoHuaYuan" class="mui-table-view-cell mui-indexed-list-item">常德桃花源机场</li>
-						<li data-value="BPX" data-tags="ChangDuBangDa" class="mui-table-view-cell mui-indexed-list-item">昌都邦达机场</li>
-						<li data-value="CSX" data-tags="ChangShaHuangHuaGuoJi" class="mui-table-view-cell mui-indexed-list-item">长沙黄花国际机场</li>
-						<li data-value="CIH" data-tags="ChangZhiWangCun" class="mui-table-view-cell mui-indexed-list-item">长治王村机场</li>
-						<li data-value="CZX" data-tags="ChangZhouBenNiu" class="mui-table-view-cell mui-indexed-list-item">常州奔牛机场</li>
-						<li data-value="CTU" data-tags="ChengDuShuangLiuGuoJi" class="mui-table-view-cell mui-indexed-list-item">成都双流国际机场</li>
-						<li data-value="CIF" data-tags="ChiFeng" class="mui-table-view-cell mui-indexed-list-item">赤峰机场</li>
-						<li data-group="四" class="mui-table-view-divider mui-indexed-list-group">四</li>
-						<li data-value="DLU" data-tags="DaLi" class="mui-table-view-cell mui-indexed-list-item">大理机场</li>
-						<li data-value="DLC" data-tags="DaLianZhouShuiZiGuoJi" class="mui-table-view-cell mui-indexed-list-item">大连周水子国际机场</li>
-						<li data-value="DQA" data-tags="DaQingSaErTu" class="mui-table-view-cell mui-indexed-list-item">大庆萨尔图机场</li>
-						<li data-value="DAT" data-tags="DaTongDongWangZhuang" class="mui-table-view-cell mui-indexed-list-item">大同东王庄机场</li>
-						<li data-value="DAX" data-tags="DaZhouHeShi" class="mui-table-view-cell mui-indexed-list-item">达州河市机场</li>
-						<li data-value="DDG" data-tags="DanDongLangTou" class="mui-table-view-cell mui-indexed-list-item">丹东浪头机场</li>
-						<li data-value="LUM" data-tags="DeHongMangShi" class="mui-table-view-cell mui-indexed-list-item">德宏芒市机场</li>
-						<li data-value="DIG" data-tags="DiQingXiangGeLiLa" class="mui-table-view-cell mui-indexed-list-item">迪庆香格里拉机场</li>
-						<li data-value="DOY" data-tags="DongYing" class="mui-table-view-cell mui-indexed-list-item">东营机场</li>
-						<li data-value="DNH" data-tags="DunHuang" class="mui-table-view-cell mui-indexed-list-item">敦煌机场</li>
-						<li data-group="五" class="mui-table-view-divider mui-indexed-list-group">五</li>
-						<li data-value="DSN" data-tags="EErDuoSi" class="mui-table-view-cell mui-indexed-list-item">鄂尔多斯机场</li>
-						<li data-value="ENH" data-tags="EnShiXuJiaPing" class="mui-table-view-cell mui-indexed-list-item">恩施许家坪机场</li>
-						<li data-value="ERL" data-tags="ErLianHaoTeSaiWuSuGuoJi" class="mui-table-view-cell mui-indexed-list-item">二连浩特赛乌苏国际机场</li>
-						<li data-group="六" class="mui-table-view-divider mui-indexed-list-group">六</li>
-						<li data-value="FUG" data-tags="FuYangXiGuan" class="mui-table-view-cell mui-indexed-list-item">阜阳西关机场</li>
-						<li data-value="FOC" data-tags="FuZhouChangLeGuoJi" class="mui-table-view-cell mui-indexed-list-item">福州长乐国际机场</li>
-						<li data-group="七" class="mui-table-view-divider mui-indexed-list-group">七</li>
-						<li data-value="KOW" data-tags="GanZhouHuangJin" class="mui-table-view-cell mui-indexed-list-item">赣州黄金机场</li>
-						<li data-value="GOQ" data-tags="GeErMu" class="mui-table-view-cell mui-indexed-list-item">格尔木机场</li>
-						<li data-value="GYU" data-tags="GuYuanLiuPanShan" class="mui-table-view-cell mui-indexed-list-item">固原六盘山机场</li>
-						<li data-value="GYS" data-tags="GuangYuanPanLong" class="mui-table-view-cell mui-indexed-list-item">广元盘龙机场</li>
-						<li data-value="CAN" data-tags="GuangZhouBaiYunGuoJi" class="mui-table-view-cell mui-indexed-list-item">广州白云国际机场</li>
-						<li data-value="KWL" data-tags="GuiLinLiangJiangGuoJi" class="mui-table-view-cell mui-indexed-list-item">桂林两江国际机场</li>
-						<li data-value="KWE" data-tags="GuiYangLongDongBaoGuoJi" class="mui-table-view-cell mui-indexed-list-item">贵阳龙洞堡国际机场</li>
-						<li data-group="八" class="mui-table-view-divider mui-indexed-list-group">八</li>
-						<li data-value="HRB" data-tags="HaErBinTaiPingGuoJi" class="mui-table-view-cell mui-indexed-list-item">哈尔滨太平国际机场</li>
-						<li data-value="HMI" data-tags="HaMi" class="mui-table-view-cell mui-indexed-list-item">哈密机场</li>
-						<li data-value="HAK" data-tags="HaiKouMeiLanGuoJi" class="mui-table-view-cell mui-indexed-list-item">海口美兰国际机场</li>
-						<li data-value="HLD" data-tags="HaiLaErDongShanGuoJi" class="mui-table-view-cell mui-indexed-list-item">海拉尔东山国际机场</li>
-						<li data-value="HDG" data-tags="HanDan" class="mui-table-view-cell mui-indexed-list-item">邯郸机场</li>
-						<li data-value="HZG" data-tags="HanZhong" class="mui-table-view-cell mui-indexed-list-item">汉中机场</li>
-						<li data-value="HGH" data-tags="HangZhouXiaoShanGuoJi" class="mui-table-view-cell mui-indexed-list-item">杭州萧山国际机场</li>
-						<li data-value="HFE" data-tags="HeFeiLuoGangGuoJi" class="mui-table-view-cell mui-indexed-list-item">合肥骆岗国际机场</li>
-						<li data-value="HTN" data-tags="HeTian" class="mui-table-view-cell mui-indexed-list-item">和田机场</li>
-						<li data-value="HEK" data-tags="HeiHe" class="mui-table-view-cell mui-indexed-list-item">黑河机场</li>
-						<li data-value="HET" data-tags="HuHeHaoTeBaiTaGuoJi" class="mui-table-view-cell mui-indexed-list-item">呼和浩特白塔国际机场</li>
-						<li data-value="HIA" data-tags="HuaiAnLianShui" class="mui-table-view-cell mui-indexed-list-item">淮安涟水机场</li>
-						<li data-value="TXN" data-tags="HuangShanTunXiGuoJi" class="mui-table-view-cell mui-indexed-list-item">黄山屯溪国际机场</li>
-						<li data-group="九" class="mui-table-view-divider mui-indexed-list-group">九</li>
-						<li data-value="TNA" data-tags="JiNanYaoQiangGuoJi" class="mui-table-view-cell mui-indexed-list-item">济南遥墙国际机场</li>
-						<li data-value="JNG" data-tags="JiNingQuFu" class="mui-table-view-cell mui-indexed-list-item">济宁曲阜机场</li>
-						<li data-value="JXA" data-tags="JiXiXingKaiHu" class="mui-table-view-cell mui-indexed-list-item">鸡西兴凯湖机场</li>
-						<li data-value="JMU" data-tags="JiaMuSiDongJiao" class="mui-table-view-cell mui-indexed-list-item">佳木斯东郊机场</li>
-						<li data-value="JGN" data-tags="JiaYuGuan" class="mui-table-view-cell mui-indexed-list-item">嘉峪关机场</li>
-						<li data-value="JNZ" data-tags="JinZhouXiaoLingZi" class="mui-table-view-cell mui-indexed-list-item">锦州小岭子机场</li>
-						<li data-value="JDZ" data-tags="JingDeZhen" class="mui-table-view-cell mui-indexed-list-item">景德镇机场</li>
-						<li data-value="JGS" data-tags="JingGangShan" class="mui-table-view-cell mui-indexed-list-item">井冈山机场</li>
-						<li data-value="JIU" data-tags="JiuJiangLuShan" class="mui-table-view-cell mui-indexed-list-item">九江庐山机场</li>
-						<li data-value="JZH" data-tags="JiuZhaiHuangLong" class="mui-table-view-cell mui-indexed-list-item">九寨黄龙机场</li>
-						<li data-group="十" class="mui-table-view-divider mui-indexed-list-group">十</li>
-						<li data-value="KHG" data-tags="KaShi" class="mui-table-view-cell mui-indexed-list-item">喀什机场</li>
-						<li data-value="KRY" data-tags="KeLaMaYi" class="mui-table-view-cell mui-indexed-list-item">克拉玛依机场</li>
-						<li data-value="KCA" data-tags="KuCheGuiZi" class="mui-table-view-cell mui-indexed-list-item">库车龟兹机场</li>
-						<li data-value="KRL" data-tags="KuErLe" class="mui-table-view-cell mui-indexed-list-item">库尔勒机场</li>
-						<li data-value="KMG" data-tags="KunMingWuJiaBaGuoJi" class="mui-table-view-cell mui-indexed-list-item">昆明巫家坝国际机场</li>
-						<li data-group="胸" class="mui-table-view-divider mui-indexed-list-group">胸</li>
-						<li data-value="LXA" data-tags="LaSaGongGa" class="mui-table-view-cell mui-indexed-list-item">拉萨贡嘎机场</li>
-						<li data-value="LHW" data-tags="LanZhouZhongChuan" class="mui-table-view-cell mui-indexed-list-item">兰州中川机场</li>
-						<li data-value="LJG" data-tags="LiJiangSanYi" class="mui-table-view-cell mui-indexed-list-item">丽江三义机场</li>
-						<li data-value="HZH" data-tags="LiPing" class="mui-table-view-cell mui-indexed-list-item">黎平机场</li>
-						<li data-value="LYG" data-tags="LianYunGangBaiTaBu" class="mui-table-view-cell mui-indexed-list-item">连云港白塔埠机场</li>
-						<li data-value="LNJ" data-tags="LinCang" class="mui-table-view-cell mui-indexed-list-item">临沧机场</li>
-						<li data-value="LYI" data-tags="LinYi" class="mui-table-view-cell mui-indexed-list-item">临沂机场</li>
-						<li data-value="LZY" data-tags="LinZhiMiLin" class="mui-table-view-cell mui-indexed-list-item">林芝米林机场</li>
-						<li data-value="LZH" data-tags="LiuZhouBaiLian" class="mui-table-view-cell mui-indexed-list-item">柳州白莲机场</li>
-						<li data-value="LCX" data-tags="LongYanGuanZhiShan" class="mui-table-view-cell mui-indexed-list-item">龙岩冠豸山机场</li>
-						<li data-value="LZO" data-tags="LuZhouLanTian" class="mui-table-view-cell mui-indexed-list-item">泸州蓝田机场</li>
-						<li data-value="LYA" data-tags="LuoYangBeiJiao" class="mui-table-view-cell mui-indexed-list-item">洛阳北郊机场</li>
-						<li data-group="背" class="mui-table-view-divider mui-indexed-list-group">背</li>
-						<li data-value="NZH" data-tags="ManZhouLiXiJiao" class="mui-table-view-cell mui-indexed-list-item">满洲里西郊机场</li>
-						<li data-value="MIG" data-tags="MianYangNanJiao" class="mui-table-view-cell mui-indexed-list-item">绵阳南郊机场</li>
-						<li data-value="OHE" data-tags="MoHeGuLian" class="mui-table-view-cell mui-indexed-list-item">漠河古莲机场</li>
-						<li data-value="MDG" data-tags="MuDanJiangHaiLang" class="mui-table-view-cell mui-indexed-list-item">牡丹江海浪机场</li>
+						<li data-group="三" class="mui-table-view-divider mui-indexed-list-group">三三下臂部位</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									其门穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									其角穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									其正穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									火串穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									火陵穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="四" class="mui-table-view-divider mui-indexed-list-group">四四上臂部位</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									分金穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									后椎穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									首英穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="五" class="mui-table-view-divider mui-indexed-list-group">五五脚趾部位</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									火包穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									上瘤穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									海豹穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									木妇穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="六" class="mui-table-view-divider mui-indexed-list-group">六六脚掌部位</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									火硬穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									火主穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									门金穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="七" class="mui-table-view-divider mui-indexed-list-group">七七小腿部位</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									正筋穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									正宗穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									正士穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="八" class="mui-table-view-divider mui-indexed-list-group">八八大腿部位</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									过关穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									通山穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									通天穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="九" class="mui-table-view-divider mui-indexed-list-group">九九耳朵部位</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									耳环穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									木耳穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									火耳穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="十" class="mui-table-view-divider mui-indexed-list-group">十十头面部位</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									正会穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									州圆穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									州仑穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="胸" class="mui-table-view-divider mui-indexed-list-group">胸部</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									喉蛾九穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									十二猴穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									金五穴
+								</div>
+							</li>
+						</ul>
+						<li data-group="背" class="mui-table-view-divider mui-indexed-list-group">背部</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									分枝上穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									分枝下穴
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									五岭穴
+								</div>
+							</li>
+						</ul>
 					</ul>
 				</div>
 			</div>
@@ -251,5 +512,4 @@
 			});
 		</script>
 	</body>
-
 </html>

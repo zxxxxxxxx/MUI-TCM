@@ -28,13 +28,33 @@
 			}
 			
 			.mui-grid-view.mui-grid-9 {
-				border-top: none;
-				border-left: none;
+				border: none;
 				background-color: white;
 			}
 			
 			.mui-table-view-cell.mui-media.mui-col-xs-4 .mui-media-body {
 				margin-top: -1px;
+			}
+			
+			.mui-search .mui-placeholder {
+				font-size: 14px;
+				margin: 5px;
+			}
+			
+			.mui-table-view:after {
+				height: 0
+			}
+			
+			.mui-table-view:before {
+				height: 0
+			}
+			
+			.mui-table-view-divider.mui-indexed-list-group {
+				font-size: 14px;
+			}
+			
+			.mui-table-view .mui-table-view-cell.mui-media .mui-media-body {
+				font-size: 13px;
 			}
 			
 			@font-face {
@@ -51,14 +71,14 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<a class="mui-icon mui-icon-search mui-pull-right" id="open"></a>
+			<!--<a class="mui-icon mui-icon-search mui-pull-right" id="open"></a>-->
 			<h1 class="mui-title">古舌诊</h1>
 		</header>
 		<div class="mui-content">
 			<div id='list' class="mui-indexed-list">
-				<div class="mui-indexed-list-search mui-input-row">
+				<div class="mui-indexed-list-search mui-input-row mui-search" style="margin:0 5px;padding:5px 0;border-bottom: none;">
 					<!--<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索机场">-->
-					<!--<input type="search" class="mui-input-clear" style="background-color: white;border: solid 1px #e3e3e5;border-radius: 6px;" placeholder="搜索方名、症状等">-->
+					<input type="search" class="mui-input-clear" style="background-color: white;border: solid 1px #e3e3e5;border-radius: 6px;" placeholder="搜索古舌诊">
 				</div>
 				<div class="mui-indexed-list-bar">
 					<a>白</a>
@@ -73,123 +93,322 @@
 				<div class="mui-indexed-list-alert"></div>
 				<div class="mui-indexed-list-inner">
 					<div class="mui-indexed-list-empty-alert">没有数据</div>
+
 					<ul class="mui-table-view">
 						<li data-group="白" class="mui-table-view-divider mui-indexed-list-group">白苔类</li>
 						<ul class="mui-table-view mui-grid-view mui-grid-9">
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									微白薄苔舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									白色略厚舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									薄白滑苔舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									厚白滑苔舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									干厚白苔舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									淡白透明苔舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									左边白苔舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									右边白苔舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔黄心舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔黄边舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔双黄舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									半白滑半黑黄舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔黑根舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔双黑舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔黑点舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔黑斑舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔黑刺舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔黄尖灰刺舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔尖中灰根黄舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔双灰舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔尖红舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔中红舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔尖红根舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									根白苔尖红舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白尖中红根黑舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔弦淡红舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔红点舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									纯熟白苔舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									遍白舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔积粉舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔燥裂舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									白苔干硬舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									珍珠白泡舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									孕妇白苔舌
 								</div>
 							</li>
 						</ul>
 						<li data-group="黄" class="mui-table-view-divider mui-indexed-list-group">黄苔类</li>
 						<ul class="mui-table-view mui-grid-view mui-grid-9">
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									初病微黄色舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									久病微黄舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									微黄不滑舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									微黄尚滑舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									纯黄微干舌
 								</div>
 							</li>
 							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-								<div class="mui-media-body">
+								<div class="mui-media-body mui-ellipsis">
 									黄干舌
 								</div>
 							</li>
 						</ul>
 						<li data-group="黑" class="mui-table-view-divider mui-indexed-list-group">黑苔类</li>
-						<li data-value="NBS" data-tags="ChangBaiShan" class="mui-table-view-cell mui-indexed-list-item">长白山机场</li>
-						<li data-value="CGQ" data-tags="ChangChunLongJiaGuoJi" class="mui-table-view-cell mui-indexed-list-item">长春龙嘉国际机场</li>
-						<li data-value="CGD" data-tags="ChangDeTaoHuaYuan" class="mui-table-view-cell mui-indexed-list-item">常德桃花源机场</li>
-						<li data-value="BPX" data-tags="ChangDuBangDa" class="mui-table-view-cell mui-indexed-list-item">昌都邦达机场</li>
-						<li data-value="CSX" data-tags="ChangShaHuangHuaGuoJi" class="mui-table-view-cell mui-indexed-list-item">长沙黄花国际机场</li>
-						<li data-value="CIH" data-tags="ChangZhiWangCun" class="mui-table-view-cell mui-indexed-list-item">长治王村机场</li>
-						<li data-value="CZX" data-tags="ChangZhouBenNiu" class="mui-table-view-cell mui-indexed-list-item">常州奔牛机场</li>
-						<li data-value="CTU" data-tags="ChengDuShuangLiuGuoJi" class="mui-table-view-cell mui-indexed-list-item">成都双流国际机场</li>
-						<li data-value="CIF" data-tags="ChiFeng" class="mui-table-view-cell mui-indexed-list-item">赤峰机场</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									纯黑苔舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									全黑无苔舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									纯黄黑苔舌
+								</div>
+							</li>
+						</ul>
 						<li data-group="灰" class="mui-table-view-divider mui-indexed-list-group">灰苔类</li>
-						<li data-value="DLU" data-tags="DaLi" class="mui-table-view-cell mui-indexed-list-item">大理机场</li>
-						<li data-value="DLC" data-tags="DaLianZhouShuiZiGuoJi" class="mui-table-view-cell mui-indexed-list-item">大连周水子国际机场</li>
-						<li data-value="DQA" data-tags="DaQingSaErTu" class="mui-table-view-cell mui-indexed-list-item">大庆萨尔图机场</li>
-						<li data-value="DAT" data-tags="DaTongDongWangZhuang" class="mui-table-view-cell mui-indexed-list-item">大同东王庄机场</li>
-						<li data-value="DAX" data-tags="DaZhouHeShi" class="mui-table-view-cell mui-indexed-list-item">达州河市机场</li>
-						<li data-value="DDG" data-tags="DanDongLangTou" class="mui-table-view-cell mui-indexed-list-item">丹东浪头机场</li>
-						<li data-value="LUM" data-tags="DeHongMangShi" class="mui-table-view-cell mui-indexed-list-item">德宏芒市机场</li>
-						<li data-value="DIG" data-tags="DiQingXiangGeLiLa" class="mui-table-view-cell mui-indexed-list-item">迪庆香格里拉机场</li>
-						<li data-value="DOY" data-tags="DongYing" class="mui-table-view-cell mui-indexed-list-item">东营机场</li>
-						<li data-value="DNH" data-tags="DunHuang" class="mui-table-view-cell mui-indexed-list-item">敦煌机场</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									纯灰色舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									灰尖舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									灰多黄少舌
+								</div>
+							</li>
+						</ul>
 						<li data-group="红" class="mui-table-view-divider mui-indexed-list-group">红苔类</li>
-						<li data-value="DSN" data-tags="EErDuoSi" class="mui-table-view-cell mui-indexed-list-item">鄂尔多斯机场</li>
-						<li data-value="ENH" data-tags="EnShiXuJiaPing" class="mui-table-view-cell mui-indexed-list-item">恩施许家坪机场</li>
-						<li data-value="ERL" data-tags="ErLianHaoTeSaiWuSuGuoJi" class="mui-table-view-cell mui-indexed-list-item">二连浩特赛乌苏国际机场</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									纯红舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									光红柔嫩舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									红中微黄滑舌
+								</div>
+							</li>
+						</ul>
 						<li data-group="紫" class="mui-table-view-divider mui-indexed-list-group">紫苔类</li>
-						<li data-value="FUG" data-tags="FuYangXiGuan" class="mui-table-view-cell mui-indexed-list-item">阜阳西关机场</li>
-						<li data-value="FOC" data-tags="FuZhouChangLeGuoJi" class="mui-table-view-cell mui-indexed-list-item">福州长乐国际机场</li>
-						<li data-group="霉" class="mui-table-view-divider mui-indexed-list-group">霉酱色苔类</li>
-						<li data-value="KOW" data-tags="GanZhouHuangJin" class="mui-table-view-cell mui-indexed-list-item">赣州黄金机场</li>
-						<li data-value="GOQ" data-tags="GeErMu" class="mui-table-view-cell mui-indexed-list-item">格尔木机场</li>
-						<li data-value="GYU" data-tags="GuYuanLiuPanShan" class="mui-table-view-cell mui-indexed-list-item">固原六盘山机场</li>
-						<li data-value="GYS" data-tags="GuangYuanPanLong" class="mui-table-view-cell mui-indexed-list-item">广元盘龙机场</li>
-						<li data-value="CAN" data-tags="GuangZhouBaiYunGuoJi" class="mui-table-view-cell mui-indexed-list-item">广州白云国际机场</li>
-						<li data-value="KWL" data-tags="GuiLinLiangJiangGuoJi" class="mui-table-view-cell mui-indexed-list-item">桂林两江国际机场</li>
-						<li data-value="KWE" data-tags="GuiYangLongDongBaoGuoJi" class="mui-table-view-cell mui-indexed-list-item">贵阳龙洞堡国际机场</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									纯紫苔舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									紫上白苔舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									紫上黄苔湿润舌
+								</div>
+							</li>
+						</ul>
+						<li data-group="酱" class="mui-table-view-divider mui-indexed-list-group">霉酱色苔类</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									纯霉酱色舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									中霉浮厚舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									霉黄色舌
+								</div>
+							</li>
+						</ul>
 						<li data-group="蓝" class="mui-table-view-divider mui-indexed-list-group">蓝色苔类</li>
-						<li data-value="HRB" data-tags="HaErBinTaiPingGuoJi" class="mui-table-view-cell mui-indexed-list-item">哈尔滨太平国际机场</li>
-						<li data-value="HMI" data-tags="HaMi" class="mui-table-view-cell mui-indexed-list-item">哈密机场</li>
-						<li data-value="HAK" data-tags="HaiKouMeiLanGuoJi" class="mui-table-view-cell mui-indexed-list-item">海口美兰国际机场</li>
-						<li data-value="HLD" data-tags="HaiLaErDongShanGuoJi" class="mui-table-view-cell mui-indexed-list-item">海拉尔东山国际机场</li>
-						<li data-value="HDG" data-tags="HanDan" class="mui-table-view-cell mui-indexed-list-item">邯郸机场</li>
-						<li data-value="HZG" data-tags="HanZhong" class="mui-table-view-cell mui-indexed-list-item">汉中机场</li>
-						<li data-value="HGH" data-tags="HangZhouXiaoShanGuoJi" class="mui-table-view-cell mui-indexed-list-item">杭州萧山国际机场</li>
-						<li data-value="HFE" data-tags="HeFeiLuoGangGuoJi" class="mui-table-view-cell mui-indexed-list-item">合肥骆岗国际机场</li>
-						<li data-value="HTN" data-tags="HeTian" class="mui-table-view-cell mui-indexed-list-item">和田机场</li>
-						<li data-value="HEK" data-tags="HeiHe" class="mui-table-view-cell mui-indexed-list-item">黑河机场</li>
-						<li data-value="HET" data-tags="HuHeHaoTeBaiTaGuoJi" class="mui-table-view-cell mui-indexed-list-item">呼和浩特白塔国际机场</li>
-						<li data-value="HIA" data-tags="HuaiAnLianShui" class="mui-table-view-cell mui-indexed-list-item">淮安涟水机场</li>
-						<li data-value="TXN" data-tags="HuangShanTunXiGuoJi" class="mui-table-view-cell mui-indexed-list-item">黄山屯溪国际机场</li>
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									纯蓝色舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									蓝纹舌
+								</div>
+							</li>
+							<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+								<div class="mui-media-body mui-ellipsis">
+									葡萄瘟舌
+								</div>
+							</li>
+						</ul>
 					</ul>
 				</div>
 			</div>
@@ -208,5 +427,4 @@
 			});
 		</script>
 	</body>
-
 </html>

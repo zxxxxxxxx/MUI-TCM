@@ -14,9 +14,9 @@
 		<link rel="stylesheet" type="text/css" href="css/app.css" />
 		<style>
 			.title {
-				margin: 20px 15px 10px;
+				margin: 10px 15px 10px;
 				color: #6d6d72;
-				font-size: 15px;
+				font-size: 14px;
 			}
 			
 			.mui-table-view-cell {
@@ -26,6 +26,14 @@
 			
 			.mui-search .mui-placeholder {
 				font-size: 14px;
+			}
+			
+			.mui-control-content {
+				min-height: 215px;
+			}
+			
+			.mui-control-content .mui-loading {
+				margin-top: 50px;
 			}
 			
 			@font-face {
@@ -47,86 +55,98 @@
 		</header>
 
 		<div class="mui-content">
-			<div class="mui-content-padded" style="margin: 5px;margin-bottom: -20px;">
-				<div class="mui-input-row mui-search">
-					<input type="search" class="mui-input-clear" style="background-color: white;border: solid 1px #e3e3e5;" placeholder="搜索方名、症状等">
+			<div id="slider" class="mui-slider mui-fullscreen">
+				<div class="mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-content-padded" style="margin: 5px;">
+						<div class="mui-input-row mui-search">
+							<input type="search" class="mui-input-clear" style="background-color: white;border: solid 1px #e3e3e5;" placeholder="搜索方名、症状等">
+						</div>
+					</div>
+				</div>
+				<div class="mui-slider-group">
+					<div class="mui-slider-item mui-control-content" style="border:none;border-bottom: 1px solid #e3e3e5;">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<div class="title" style="color:#c15d3e;">
+									大家都在看
+								</div>
+								<ul class="mui-table-view mui-table-view-chevron" style="border-top: solid 1px #e3e3e5;font-size: 15px;">
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												葛根汤（伤寒论）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												五苓散（伤寒论）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												大柴胡汤（伤寒论）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												四逆散（伤寒论）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												温经汤（金匮要略）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												血府逐瘀汤（医林改错）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												小建中汤（伤寒论）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												四物汤（太平惠民和剂局方）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												小青龙汤（伤寒论）
+											</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media">
+										<a class="mui-navigate-right">
+											<div class="mui-media-body">
+												桂枝茯苓丸（金匮要略）
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="title" style="color:#c15d3e">
-				大家都在看
-			</div>
-			<ul class="mui-table-view mui-table-view-chevron">
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							葛根汤（伤寒论）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							五苓散（伤寒论）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							大柴胡汤（伤寒论）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							四逆散（伤寒论）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							温经汤（金匮要略）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							血府逐瘀汤（医林改错）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							小建中汤（伤寒论）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							四物汤（太平惠民和剂局方）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							小青龙汤（伤寒论）
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<div class="mui-media-body">
-							桂枝茯苓丸（金匮要略）
-						</div>
-					</a>
-				</li>
-			</ul>
 		</div>
 
 	</body>
@@ -135,5 +155,9 @@
 		mui.init({
 			swipeBack: true //启用右滑关闭功能
 		});
+		(function($) {
+			$('.mui-scroll-wrapper').scroll({
+				indicators: true //是否显示滚动条
+			});
+		})(mui);
 	</script>
-	<script>

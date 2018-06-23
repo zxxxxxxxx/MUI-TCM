@@ -1,125 +1,180 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>大家中医</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	    <meta name="apple-mobile-web-app-capable" content="yes">
-	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
 		<!--标准mui.css-->
-	    <link rel="stylesheet" href="css/mui.min.css">
-	    <!--App自定义的css-->
-	    <link rel="stylesheet" type="text/css" href="css/app.css" />
-	    
-	    <style>
-	    	a.mui-action-back {
-	    		color: #c6c6c6;
-	    	}
-	    	.mui-content {
-	    		margin-top: 50px;
-	    	}
-	    	.mui-col-xs-2 {
-	    		/*border-bottom: 1px solid #000;*/	    		
-	    	}
-	    	.mui-col-xs-7 {
-	    		height: 41px;
-	    		margin-right: 15px;
-	    		border-bottom: 1px solid #000;
-	    	}
-	    	.unit {
-	    		background: #f8f7f5;
-	    	}
-	    </style>
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		<!--<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />-->
+		<style>
+			body {
+				background-color: #f8f7f5;
+			}
+			
+			.mui-content {
+				background-color: white;
+				height: 330px;
+			}
+			
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+			
+			.mui-input-clear.border-none {
+				border: none;
+				margin-bottom: 0;
+			}
+			
+			.my-input {
+				flex: 1;
+				display: flex;
+				border-bottom: 1px solid #e3e3e5;
+				margin-right: 10px;
+				margin-left: 10px;
+			}
+			
+			li {
+				list-style-type: none;
+				margin: 5px;
+			}
+		</style>
 	</head>
+
 	<body>
 		<header class="mui-bar mui-bar-nav">
-	        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-	        <h1 class="mui-title">计量转换</h1>
-	    </header>
-    	<div class="mui-content">
-    		<div class="ancient">
-    			<center>
-    				<div class="mui-col-xs-2" style="float: left;">
-    					<select class="dynasty">
-				    	   	<option value="汉" selected="true">汉</option>
-				    	   	<option value="宋">宋</option>
-				    	</select>
-    				</div>
-    				<div class="mui-col-xs-2" style="float: right;">
-			    	    <select class="ancient-unit">
-			    	    	<option value="石">石</option>
-			    	    	<option value="斤">斤</option>
-			    	    	<option value="两" selected="true">两</option>
-			    	    </select>
-		    	   	</div>
-    				<div class="mui-col-xs-7" style="float: right;">
-	    				<input type="text" class="mui-input-clear" style="border: none;">    					
-    				</div>    				
-	    	    </center>
-    		</div>
-    		<br />
-    	    <div class="modern" style="display: inline;">
-    	    	<center>
-    	    		<div class="mui-col-xs-2" style="float: right;">
-			    	    <select class="modern-unit">
-			    	    	<option value="克" selected="true">克</option>
-			    	    </select>
-		    	   	</div>
-    	    		<div class="mui-col-xs-7" style="float: right;">
-	   	    	    	<input type="text" name="result" style="border: none;" readonly="true">
-	   	    	    </div>	   	    	    
-	    	    </center>
-    	    </div>
-       	</div>
-       	<br /><br /><br /><br /><br /><br />
-   		<div class="unit">
-   			<br >
-    	    <center style="color: #b2987f;">
-    	   		梧桐子大 = 黄豆大<br >
-				1方寸匙 = 金石类2.74克 = 药末约2克 = 草本类药末约1克<br >
-				蜀椒一升 = 50克<br >
-				半方寸匙 = 1.5克<br >
-				葶苈子一升 = 60克<br >
-    	    </center>
-    	</div>
- 	
-    	
-	</body>
-	
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript">
-		UnitInHang = {"石":29760.0, "斤":248.0, "两":15.625};
-		UnitInSong = {"石":70800.0, "斤":590.0, "两":36.9};
-		
-		$(".ancient-unit").change(function() {
-			if(!"".equals($(".mui-input-clear").value)){
-				if($(".dynasty").val() === "汉") {
-					$("input[name='result']").val() = 
-						parseFloat($(".mui-input-clear").value) * 
-						UnitInHang[$(".ancient-unit").value];
-				} else if($(".dynasty").val() === "宋") {
-					$("input[name='result']").val() = 
-						parseFloat($(".mui-input-clear").value) * 
-						UnitInSong[$(".ancient-unit").value];
-				}
-			}
-		});
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">计量转换</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="display: flex;margin-top: 100px;">
+				<div class="my-input">
+					<input id="showDynastyPicker" class="mui-input-clear border-none" type='text' value="汉" style="width: 80%;">
+					<div class="mui-icon mui-icon-arrowdown" style="font-size: 10px;width: 20%;margin-top: 15px;"></div>
+				</div>
+				<div style="flex: 2.5;border-bottom: 1px solid #e3e3e5;">
+					<input class="mui-input-clear border-none" type='number' style="flex: 2.5;" autofocus="true">
+				</div>
+				<div class="my-input">
+					<input id="showWeightPicker" class="mui-input-clear border-none" type='text' value="两" style="width: 80%;">
+					<div class="mui-icon mui-icon-arrowdown" style="font-size: 10px;width: 20%;margin-top: 15px;"></div>
+				</div>
+			</div>
+			<div class="mui-content-padded" style="display: flex;margin-top: 60px;">
+				<div class="my-input" style="border: none;">
+					<input class="mui-input-clear border-none" type='text'></div>
+				<div style="flex: 2.5;border-bottom: 1px solid #e3e3e5;">
+					<input class="mui-input-clear border-none" type='number' disabled="true">
+				</div>
+				<div class="my-input">
+					<input class="mui-input-clear border-none" type='text' value="克">
+				</div>
+			</div>
+		</div>
+		<center style="color: #b2987f;margin: 20px;font-size: 11px;">
+			<!--<ul>-->
+				<li>梧桐子大 = 黄豆大</li>
+				<li>1方寸匙 = 金石类2.74克 = 药末约2克 = 草本类药末约1克</li>
+				<li>蜀椒一升 = 50克</li>
+				<li>半方寸匙 = 1.5克</li>
+				<li>葶苈子一升 = 60克</li>
+				<li>一钱匙 = 1.5-1.8克</li>
+				<li>吴茱萸一升 = 50克</li>
+				<li>五味子一升 = 50克</li>
+				<li>一铢 = 100个黍米的重量</li>
+				<li>半夏一升 = 130克</li>
+				<li>虻虫一升 = 16克</li>
+				<li>附子大者1枚 = 20-30克</li>
+				<li>附子中者1枚 = 15克</li>
+				<li>强乌头1枚小者 = 3克</li>
+				<li>强乌头1枚大者 = 5-6克</li>
+			<!--</ul>-->
+		</center>
 
-		$(".mui-input-clear").change(function() {
-			if(!"".equals($(".mui-input-clear").value)){
-				if($(".dynasty").val() === "汉") {
-					$("input[name='result']").val() = 
-						parseFloat($(".mui-input-clear").value) * 
-						UnitInHang[$(".ancient-unit").value];
-				} else if($(".dynasty").val() === "宋") {
-					$("input[name='result']").val() = 
-						parseFloat($(".mui-input-clear").value) * 
-						UnitInSong[$(".ancient-unit").value];
-				}
-			} else {
-				$("input[name='result']").val() = "";
-			}
-		});
-	</script>
+		<script src="js/mui.min.js"></script>
+		<!--<script src="js/mui.picker.min.js"></script>-->
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					/**
+					 * 获取对象属性的值
+					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+					 * @param {Object} obj 对象
+					 * @param {String} param 属性名
+					 */
+					var _getParam = function(obj, param) {
+						return obj[param] || '';
+					};
+					//普通示例
+					var dynastyPicker = new $.PopPicker();
+					dynastyPicker.setData([{
+						value: 'han',
+						text: '汉'
+					}, {
+						value: 'song',
+						text: '宋'
+					}]);
+					var showDynastyPickerButton = doc.getElementById('showDynastyPicker');
+					showDynastyPickerButton.addEventListener('tap', function(event) {
+						dynastyPicker.show(function(items) {
+							showDynastyPickerButton.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					//					var _getParam = function(obj, param) {
+					//						return obj[param] || '';
+					//					};
+					//普通示例
+					var weightPicker = new $.PopPicker();
+					weightPicker.setData([{
+						value: 'liang',
+						text: '两'
+					}, {
+						value: 'shi',
+						text: '石'
+					}, {
+						value: 'jin',
+						text: '斤'
+					}]);
+					var showWeightPickerButton = doc.getElementById('showWeightPicker');
+					showWeightPickerButton.addEventListener('tap', function(event) {
+						weightPicker.show(function(items) {
+							showWeightPickerButton.value = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+		</script>
+	</body>
+
 </html>
