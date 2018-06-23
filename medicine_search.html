@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		
+		<style>
+			body, input {
+				background: #F8F7F5;
+			}
+			header {
+				/*background: white;*/
+			}
+			input {
+				background-color: #F8F7F5;				
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <div class="mui-input-row">
+				<label style="width: 40px;">×</label>
+				<input type="text" class="mui-input-clear" placeholder="搜索药" style="background: #F8F7F5; align-content: center;">
+			</div>
+		</header>
+		<div class="mui-content" style="margin-top: 0px;"></div>
+		<p style="text-align: center; margin-top: 10px;">点击或上拉加载更多</p>
+		<script src="js/mui.min.js"></script>
+		<script>
+			var nativeWebview, imm, InputMethodManager;
+			var initNativeObjects = function() {
+				if (mui.os.android) {
+					var main = plus.android.runtimeMainActivity();
+					var Context = plus.android.importClass("android.content.Context");
+					InputMethodManager = plus.android.importClass("android.view.inputmethod.InputMethodManager");
+					imm = main.getSystemService(Context.INPUT_METHOD_SERVICE);
+				} else {
+					nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
+				}
+			};
+			var showSoftInput = function() {
+				if (mui.os.android) {
+					imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+				} else {
+					nativeWebview.plusCallMethod({
+						"setKeyboardDisplayRequiresUserAction": false
+					});
+				}
+				setTimeout(function() {
+					var inputElem = document.querySelector('input');
+					inputElem.focus();
+					inputElem.parentNode.classList.add('mui-active'); //第一个是search，加上激活样式
+				}, 200);
+			};
+			mui.plusReady(function() {
+				initNativeObjects();
+				showSoftInput();
+			});
+			
+			var list = []; 
+			var key = document.querySelector("input").value;
+			/*
+			 * 根据input框中的数值搜索数据库
+			 */
+			if(list.length > 0) {
+				var ul = document.createElement("ul");
+				ul.setAttribute("class", "mui-table-view");
+				for(var i = 0; i < list.length; i++){
+					var li = document.createElement("li");
+					li.setAttribute("class", "mui-table-view-cell");
+					var name = document.createTextNode(/* 药名 */);
+					li.appendChild(name);
+					ul.appendChild(li);
+				}
+				document.querySelector(".mui-content").appendChild(ul);
+			}
+		</script>
+	</body>
+</html>
