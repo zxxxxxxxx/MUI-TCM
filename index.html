@@ -1,652 +1,659 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>Hello MUI</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<!--标准mui.css-->
-		<link rel="stylesheet" href="css/mui.min.css">
-		<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
-		<!--App自定义的css-->
-		<link rel="stylesheet" type="text/css" href="css/app.css" />
-		<style>
-			/** {
-				touch-action: none;
-			}*/
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/icons-extra.css"/>
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <style>
+        /** {
+            touch-action: none;
+        }*/
 
-			.title {
-				margin: 20px 15px 10px;
-				color: #6d6d72;
-				font-size: 15px;
-			}
+        .title {
+            margin: 20px 15px 10px;
+            color: #6d6d72;
+            font-size: 15px;
+        }
 
-			.oa-contact-cell.mui-table .mui-table-cell {
-				padding: 11px 0;
-				vertical-align: middle;
-			}
+        .oa-contact-cell.mui-table .mui-table-cell {
+            padding: 11px 0;
+            vertical-align: middle;
+        }
 
-			.oa-contact-cell {
-				position: relative;
-				margin: -11px 0;
-			}
+        .oa-contact-cell {
+            position: relative;
+            margin: -11px 0;
+        }
 
-			.oa-contact-avatar {
-				width: 75px;
-			}
+        .oa-contact-avatar {
+            width: 75px;
+        }
 
-			.oa-contact-avatar img {
-				border-radius: 2px;
-				width: 60px;
-				height: 75px;
-			}
+        .oa-contact-avatar img {
+            border-radius: 2px;
+            width: 60px;
+            height: 75px;
+        }
 
-			.oa-contact-content {
-				width: 100%;
-			}
+        .oa-contact-content {
+            width: 100%;
+        }
 
-			.oa-contact-name {
-				margin-right: 20px;
-			}
+        .oa-contact-name {
+            margin-right: 20px;
+        }
 
-			.oa-contact-name {
-				margin-right: 20px;
-			}
+        .oa-contact-name {
+            margin-right: 20px;
+        }
 
-			.oa-contact-name,
-			oa-contact-position {
-				float: left;
-			}
+        .oa-contact-name,
+        oa-contact-position {
+            float: left;
+        }
 
-			.mui-table-view.mui-grid-9 {
-				/*替换成自己的颜色*/
-				background-color: white;
-			}
+        .mui-table-view.mui-grid-9 {
+            /*替换成自己的颜色*/
+            background-color: white;
+        }
 
-			.mui-card {
-				margin: 20px;
-				margin-bottom: 45px;
-			}
+        .mui-card {
+            margin: 20px;
+            margin-bottom: 45px;
+        }
 
-			.mui-bar-tab .mui-tab-item.mui-active {
-				color: #c15d3e;
-			}
+        .mui-bar-tab .mui-tab-item.mui-active {
+            color: #c15d3e;
+        }
 
-			@font-face {
-				font-family: "MyFont";
-				src: url("fonts/方正清刻本悦宋简.TTF");
-			}
+        @font-face {
+            font-family: "MyFont";
+            src: url("fonts/方正清刻本悦宋简.TTF");
+        }
 
-			body {
-				font-family: "MyFont";
-			}
+        body {
+            font-family: "MyFont";
+        }
 
-			.mui-table-view-cell {
-				background-color: white;
-			}
+        .mui-table-view-cell {
+            background-color: white;
+        }
 
-			.mui-media-object.mui-pull-left {
-				border-radius: 2px;
-				width: 25px;
-				height: 25px;
-				margin-top: 8px;
-			}
+        .mui-media-object.mui-pull-left {
+            border-radius: 2px;
+            width: 25px;
+            height: 25px;
+            margin-top: 8px;
+        }
 
-			.vertical-line {
-				background-color: white;
-				height: 60px;
-				width: 1px;
-				border-left: 1px #e3e3e5 solid;
-				margin: 0 auto;
-				padding: 0;
-			}
+        .vertical-line {
+            background-color: white;
+            height: 60px;
+            width: 1px;
+            border-left: 1px #e3e3e5 solid;
+            margin: 0 auto;
+            padding: 0;
+        }
 
-			.mui-media-body {
-				font-size: 14px;
-			}
-            html,
-            body {
-                background-color: #efeff4;
-            }
+        .mui-media-body {
+            font-size: 14px;
+        }
 
-            .mui-views,
-            .mui-view,
-            .mui-pages,
-            .mui-page,
-            .mui-page-content {
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #efeff4;
-            }
+        html,
+        body {
+            background-color: #efeff4;
+        }
 
-            .mui-pages {
-                top: 46px;
-                height: auto;
-            }
+        .mui-views,
+        .mui-view,
+        .mui-pages,
+        .mui-page,
+        .mui-page-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #efeff4;
+        }
 
-            .mui-scroll-wrapper,
-            .mui-scroll {
-                background-color: #efeff4;
-            }
+        .mui-pages {
+            top: 46px;
+            height: auto;
+        }
 
-            .mui-page.mui-transitioning {
-                -webkit-transition: -webkit-transform 300ms ease;
-                transition: transform 300ms ease;
-            }
+        .mui-scroll-wrapper,
+        .mui-scroll {
+            background-color: #efeff4;
+        }
 
-            .mui-page-left {
-                -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-            }
+        .mui-page.mui-transitioning {
+            -webkit-transition: -webkit-transform 300ms ease;
+            transition: transform 300ms ease;
+        }
 
-            .mui-ios .mui-page-left {
-                -webkit-transform: translate3d(-20%, 0, 0);
-                transform: translate3d(-20%, 0, 0);
-            }
+        .mui-page-left {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
 
-            .mui-navbar {
-                position: fixed;
-                right: 0;
-                left: 0;
-                z-index: 10;
-                height: 44px;
-                background-color: #f7f7f8;
-            }
+        .mui-ios .mui-page-left {
+            -webkit-transform: translate3d(-20%, 0, 0);
+            transform: translate3d(-20%, 0, 0);
+        }
 
-            .mui-navbar .mui-bar {
-                position: absolute;
-                background: transparent;
-                text-align: center;
-            }
+        .mui-navbar {
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 10;
+            height: 44px;
+            background-color: #f7f7f8;
+        }
 
-            .mui-android .mui-navbar-inner.mui-navbar-left {
-                opacity: 0;
-            }
+        .mui-navbar .mui-bar {
+            position: absolute;
+            background: transparent;
+            text-align: center;
+        }
 
-            .mui-ios .mui-navbar-left .mui-left,
-            .mui-ios .mui-navbar-left .mui-center,
-            .mui-ios .mui-navbar-left .mui-right {
-                opacity: 0;
-            }
+        .mui-android .mui-navbar-inner.mui-navbar-left {
+            opacity: 0;
+        }
 
-            .mui-navbar .mui-btn-nav {
-                -webkit-transition: none;
-                transition: none;
-                -webkit-transition-duration: .0s;
-                transition-duration: .0s;
-            }
+        .mui-ios .mui-navbar-left .mui-left,
+        .mui-ios .mui-navbar-left .mui-center,
+        .mui-ios .mui-navbar-left .mui-right {
+            opacity: 0;
+        }
 
-            .mui-navbar .mui-bar .mui-title {
-                display: inline-block;
-                width: auto;
-            }
+        .mui-navbar .mui-btn-nav {
+            -webkit-transition: none;
+            transition: none;
+            -webkit-transition-duration: .0s;
+            transition-duration: .0s;
+        }
 
-            .mui-page-shadow {
-                position: absolute;
-                right: 100%;
-                top: 0;
-                width: 16px;
-                height: 100%;
-                z-index: -1;
-                content: '';
-            }
+        .mui-navbar .mui-bar .mui-title {
+            display: inline-block;
+            width: auto;
+        }
 
-            .mui-page-shadow {
-                background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
-                background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
-            }
+        .mui-page-shadow {
+            position: absolute;
+            right: 100%;
+            top: 0;
+            width: 16px;
+            height: 100%;
+            z-index: -1;
+            content: '';
+        }
 
-            .mui-navbar-inner.mui-transitioning,
-            .mui-navbar-inner .mui-transitioning {
-                -webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
-                transition: opacity 300ms ease, transform 300ms ease;
-            }
+        .mui-page-shadow {
+            background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+        }
 
-            .mui-page {
-                display: none;
-            }
+        .mui-navbar-inner.mui-transitioning,
+        .mui-navbar-inner .mui-transitioning {
+            -webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+            transition: opacity 300ms ease, transform 300ms ease;
+        }
 
-            .mui-pages .mui-page {
-                display: block;
-            }
+        .mui-page {
+            display: none;
+        }
 
-            .mui-page .mui-table-view:first-child {
-                margin-top: 15px;
-            }
+        .mui-pages .mui-page {
+            display: block;
+        }
 
-            .mui-page .mui-table-view:last-child {
-                margin-bottom: 30px;
-            }
+        .mui-page .mui-table-view:first-child {
+            margin-top: 15px;
+        }
 
-            .mui-table-view {
-                margin-top: 20px;
-            }
+        .mui-page .mui-table-view:last-child {
+            margin-bottom: 30px;
+        }
 
-            .mui-table-view span.mui-pull-right {
-                color: #999;
-            }
+        .mui-table-view {
+            margin-top: 20px;
+        }
 
-            .mui-table-view-divider {
-                background-color: #efeff4;
-                font-size: 14px;
-            }
+        .mui-table-view span.mui-pull-right {
+            color: #999;
+        }
 
-            .mui-table-view-divider:before,
-            .mui-table-view-divider:after {
-                height: 0;
-            }
+        .mui-table-view-divider {
+            background-color: #efeff4;
+            font-size: 14px;
+        }
 
-            .head {
-                height: 40px;
-            }
+        .mui-table-view-divider:before,
+        .mui-table-view-divider:after {
+            height: 0;
+        }
 
-            #head {
-                line-height: 40px;
-            }
+        .head {
+            height: 40px;
+        }
 
-            .head-img {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-            }
+        #head {
+            line-height: 40px;
+        }
 
-            #head-img1 {
-                position: absolute;
-                bottom: 10px;
-                right: 40px;
-                width: 40px;
-                height: 40px;
-            }
+        .head-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
 
-            .update {
-                font-style: normal;
-                color: #999999;
-                margin-right: -25px;
-                font-size: 15px
-            }
+        #head-img1 {
+            position: absolute;
+            bottom: 10px;
+            right: 40px;
+            width: 40px;
+            height: 40px;
+        }
 
-            .mui-fullscreen {
-                position: fixed;
-                z-index: 20;
-                background-color: #000;
-            }
+        .update {
+            font-style: normal;
+            color: #999999;
+            margin-right: -25px;
+            font-size: 15px
+        }
 
-            .mui-ios .mui-navbar .mui-bar .mui-title {
-                position: static;
-            }
+        .mui-fullscreen {
+            position: fixed;
+            z-index: 20;
+            background-color: #000;
+        }
 
-            /*问题反馈在setting页面单独的css*/
-            #feedback .mui-popover {
-                position: fixed;
-            }
+        .mui-ios .mui-navbar .mui-bar .mui-title {
+            position: static;
+        }
 
-            #feedback .mui-table-view:last-child {
-                margin-bottom: 0px;
-            }
+        /*问题反馈在setting页面单独的css*/
+        #feedback .mui-popover {
+            position: fixed;
+        }
 
-            #feedback .mui-table-view:first-child {
-                margin-top: 0px;
-            }
+        #feedback .mui-table-view:last-child {
+            margin-bottom: 0px;
+        }
 
-            .mui-plus.mui-plus-stream .mui-stream-hidden {
-                display: none !important;
-            }
+        #feedback .mui-table-view:first-child {
+            margin-top: 0px;
+        }
 
-            /*问题反馈在setting页面单独的css==end*/
-            .my-icon {
-                color: #c15d3e;
-                width: 35px;
-            }
-		</style>
-	</head>
+        .mui-plus.mui-plus-stream .mui-stream-hidden {
+            display: none !important;
+        }
 
-	<body>
-		<header class="mui-bar mui-bar-nav">
-			<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
-			<h1 class="mui-title">大家中医</h1>
-		</header>
-		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item" href="#tabbar">
-				<span class="mui-icon mui-icon-home"></span>
-				<span class="mui-tab-label">工作室</span>
-			</a>
-			<a class="mui-tab-item mui-active" href="#tabbar-with-chat">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-xiaoshuo"></span>
-				<span class="mui-tab-label">经典</span>
-			</a>
-			<a class="mui-tab-item" href="#tabbar-with-contact">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-university"><span class="mui-badge">1</span></span>
-				<span class="mui-tab-label">大家</span>
-			</a>
-			<a class="mui-tab-item" href="#tabbar-with-map">
-				<span class="mui-icon mui-icon-person"></span>
-				<span class="mui-tab-label">我的</span>
-			</a>
-		</nav>
-		<div class="mui-content">
-			<div id="tabbar" class="mui-control-content">
-				<!--这是div模式选项卡中的第1个子页面-->
-				<div id="slider" class="mui-slider">
-					<div class="mui-slider-group mui-slider-loop">
-						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-						<div class="mui-slider-item mui-slider-item-duplicate">
-							<div class="mui-card">
-								<div class="mui-card-header mui-card-media" style="margin:30px;height:110vw;background-image:url(images/img4.png)"></div>
-							</div>
-						</div>
-						<!-- 第一张 -->
-						<div class="mui-slider-item">
-							<div class="mui-card">
-								<div class="mui-card-header mui-card-media" style="margin:30px;height:110vw;background-image:url(images/img1.png)"></div>
-							</div>
-						</div>
-						<!-- 第二张 -->
-						<div class="mui-slider-item">
-							<div class="mui-card">
-								<div class="mui-card-header mui-card-media" style="margin:30px;height:110vw;background-image:url(images/img2.png)"></div>
-							</div>
-						</div>
-						<!-- 第三张 -->
-						<div class="mui-slider-item">
-							<div class="mui-card">
-								<div class="mui-card-header mui-card-media" style="margin:30px;height:110vw;background-image:url(images/img3.png)"></div>
-							</div>
-						</div>
-						<!-- 第四张 -->
-						<div class="mui-slider-item">
-							<div class="mui-card">
-								<div class="mui-card-header mui-card-media" style="margin:30px;height:110vw;background-image:url(images/img4.png)"></div>
-							</div>
-						</div>
-						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-						<div class="mui-slider-item mui-slider-item-duplicate">
-							<div class="mui-card">
-								<div class="mui-card-header mui-card-media" style="margin:30px;height:110vw;background-image:url(images/img1.png)"></div>
-							</div>
-						</div>
-					</div>
-					<div class="mui-slider-indicator">
-						<div class="mui-indicator mui-active"></div>
-						<div class="mui-indicator"></div>
-						<div class="mui-indicator"></div>
-						<div class="mui-indicator"></div>
-					</div>
-				</div>
-			</div>
-			<div id="tabbar-with-chat" class="mui-control-content mui-active">
-				<!--这是div模式选项卡中的第2个子页面-->
-				<div id="slider1" class="mui-slider">
-					<div class="mui-slider-group mui-slider-loop mui-active">
-						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-						<div class="mui-slider-item mui-slider-item-duplicate">
-							<a href="#" style="margin: 10px;">
-								<img style="border-radius: 2px;" src="images/跟师抄方.jpg">
-							</a>
-						</div>
-						<!-- 第一张 -->
-						<div class="mui-slider-item">
-							<a href="#" style="margin: 10px;">
-								<img style="border-radius: 2px;" src="images/全是干货.jpg">
-							</a>
-						</div>
-						<!-- 第二张 -->
-						<div class="mui-slider-item">
-							<a href="#" style="margin: 10px;">
-								<img style="border-radius: 2px;" src="images/跟师抄方.jpg">
-							</a>
-						</div>
-						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-						<div class="mui-slider-item mui-slider-item-duplicate">
-							<a href="#" style="margin: 10px;">
-								<img style="border-radius: 2px;" src="images/全是干货.jpg">
-							</a>
-						</div>
-					</div>
-					<div class="mui-slider-indicator">
-						<div class="mui-indicator mui-active"></div>
-						<div class="mui-indicator"></div>
-					</div>
-				</div>
-				<div class="mui-content">
-					<ul class="mui-table-view mui-grid-view mui-grid-9" style="margin-top: 0px;">
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style>
-							<!-- <a href="test.html"> -->
-							<a href="medicine-list.html">
+        /*问题反馈在setting页面单独的css==end*/
+        .my-icon {
+            color: #c15d3e;
+            width: 35px;
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+    <h1 class="mui-title">大家中医</h1>
+</header>
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item" href="#tabbar">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">工作室</span>
+    </a>
+    <a class="mui-tab-item mui-active" href="#tabbar-with-chat">
+        <span class="mui-icon mui-icon-extra mui-icon-extra-xiaoshuo"></span>
+        <span class="mui-tab-label">经典</span>
+    </a>
+    <a class="mui-tab-item" href="#tabbar-with-contact">
+        <span class="mui-icon mui-icon-extra mui-icon-extra-university"><span class="mui-badge">1</span></span>
+        <span class="mui-tab-label">大家</span>
+    </a>
+    <a class="mui-tab-item" href="#tabbar-with-map">
+        <span class="mui-icon mui-icon-person"></span>
+        <span class="mui-tab-label">我的</span>
+    </a>
+</nav>
+<div class="mui-content">
+    <div id="tabbar" class="mui-control-content">
+        <!--这是div模式选项卡中的第1个子页面-->
+        <div id="slider" class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <div class="mui-card">
+                        <div class="mui-card-header mui-card-media"
+                             style="margin:30px;height:110vw;background-image:url(images/img4.png)"></div>
+                    </div>
+                </div>
+                <!-- 第一张 -->
+                <div class="mui-slider-item">
+                    <div class="mui-card">
+                        <div class="mui-card-header mui-card-media"
+                             style="margin:30px;height:110vw;background-image:url(images/img1.png)"></div>
+                    </div>
+                </div>
+                <!-- 第二张 -->
+                <div class="mui-slider-item">
+                    <div class="mui-card">
+                        <div class="mui-card-header mui-card-media"
+                             style="margin:30px;height:110vw;background-image:url(images/img2.png)"></div>
+                    </div>
+                </div>
+                <!-- 第三张 -->
+                <div class="mui-slider-item">
+                    <div class="mui-card">
+                        <div class="mui-card-header mui-card-media"
+                             style="margin:30px;height:110vw;background-image:url(images/img3.png)"></div>
+                    </div>
+                </div>
+                <!-- 第四张 -->
+                <div class="mui-slider-item">
+                    <div class="mui-card">
+                        <div class="mui-card-header mui-card-media"
+                             style="margin:30px;height:110vw;background-image:url(images/img4.png)"></div>
+                    </div>
+                </div>
+                <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <div class="mui-card">
+                        <div class="mui-card-header mui-card-media"
+                             style="margin:30px;height:110vw;background-image:url(images/img1.png)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+    </div>
+    <div id="tabbar-with-chat" class="mui-control-content mui-active">
+        <!--这是div模式选项卡中的第2个子页面-->
+        <div id="slider1" class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop mui-active">
+                <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#" style="margin: 10px;">
+                        <img style="border-radius: 2px;" src="images/跟师抄方.jpg">
+                    </a>
+                </div>
+                <!-- 第一张 -->
+                <div class="mui-slider-item">
+                    <a href="#" style="margin: 10px;">
+                        <img style="border-radius: 2px;" src="images/全是干货.jpg">
+                    </a>
+                </div>
+                <!-- 第二张 -->
+                <div class="mui-slider-item">
+                    <a href="#" style="margin: 10px;">
+                        <img style="border-radius: 2px;" src="images/跟师抄方.jpg">
+                    </a>
+                </div>
+                <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#" style="margin: 10px;">
+                        <img style="border-radius: 2px;" src="images/全是干货.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+        <div class="mui-content">
+            <ul class="mui-table-view mui-grid-view mui-grid-9" style="margin-top: 0px;">
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" style>
+                    <!-- <a href="test.html"> -->
+                    <a href="medicine-list.html">
 								<span class="mui-icon">
                                 <img src="images/1.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<a href="prescription.html">
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="prescription.html">
 								<span class="mui-icon">
                                 <img src="images/2.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<a href="vein.html">
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="vein.html">
 								<span class="mui-icon">
                                 <img src="images/3.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<a href="patent-medicine.html">
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="patent-medicine.html">
 								<span class="mui-icon">
                                 <img src="images/4.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<a href="fivesix.html">
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="fivesix.html">
 								<span class="mui-icon">
                                 <img src="images/5.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<a href="dong.html">
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="dong.html">
 								<span class="mui-icon">
                                 <img src="images/6.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<a href="food.html">
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="food.html">
 								<span class="mui-icon">
                                 <img src="images/7.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<a href="transform.html">
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="transform.html">
 								<span class="mui-icon">
                                 <img src="images/8.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<a href="tongue.html">
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                    <a href="tongue.html">
 								<span class="mui-icon">
                                 <img src="images/9.jpg" style="width:100%;">
                             </span>
-							</a>
-						</li>
-					</ul>
-				</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-			</div>
-			<div id="tabbar-with-contact" class="mui-control-content">
-				<div class="mui-table-view mui-table-view-chevron" style="display:flex;height:60px;margin:0;">
-					<div class="mui-table-view-cell mui-media" style="flex: 1">
-						<img class="mui-media-object mui-pull-left" src="images/icon1.jpg">
-						<div class="mui-media-body">
-							讲座活动
-							<p style="font-size: 11px;">新鲜一手掌握</p>
-						</div>
-					</div>
-					<div class="vertical-line"></div>
-					<div class="mui-table-view-cell mui-media" style="flex: 1">
-						<img class="mui-media-object mui-pull-left" src="images/icon2.jpg">
-						<div class="mui-media-body">
-							频道
-							<p style="font-size: 11px;">总有你想要的</p>
-						</div>
-					</div>
-				</div>
-				<div class="mui-h3" style="margin: 20px;">跟师抄方</div>
-				<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed" id="intro">
-					<li class="mui-table-view-cell">
-						<div class="mui-slider-cell">
-							<div class="oa-contact-cell mui-table">
-								<div class="oa-contact-avatar mui-table-cell">
-									<img src="images/黄煌1.png" />
-								</div>
-								<div class="oa-contact-content mui-table-cell">
-									<div class="mui-clearfix">
-										<h4 class="oa-contact-name">黄煌</h4>
-									</div>
-									<p class="oa-contact-email mui-h6">
-										学经方·用经方
-									</p>
-									<h6 style="color: #666666;font-size: 14px">头昏案</h6>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="mui-table-view-cell">
-						<div class="mui-slider-cell">
-							<div class="oa-contact-cell mui-table">
-								<div class="oa-contact-avatar mui-table-cell">
-									<img src="images/肖相如1.png" />
-								</div>
-								<div class="oa-contact-content mui-table-cell">
-									<div class="mui-clearfix">
-										<h4 class="oa-contact-name">肖相如</h4>
-									</div>
-									<p class="oa-contact-email mui-h6">
-										活用《伤寒》·尤擅肾病
-									</p>
-									<h6 style="color: #666666;font-size: 14px">肛门下坠、走路不稳案</h6>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="mui-table-view-cell">
-						<div class="mui-slider-cell">
-							<div class="oa-contact-cell mui-table">
-								<div class="oa-contact-avatar mui-table-cell">
-									<img src="images/史欣德1.png" />
-								</div>
-								<div class="oa-contact-content mui-table-cell">
-									<div class="mui-clearfix">
-										<h4 class="oa-contact-name">史欣德</h4>
-									</div>
-									<p class="oa-contact-email mui-h6">
-										问诊入微·讲理透彻
-									</p>
-									<h6 style="color: #666666;font-size: 14px">瓜蒌枳实汤治疗咳嗽案</h6>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="mui-table-view-cell">
-						<div class="mui-slider-cell">
-							<div class="oa-contact-cell mui-table">
-								<div class="oa-contact-avatar mui-table-cell">
-									<img src="images/贾海忠1.jpg" />
-								</div>
-								<div class="oa-contact-content mui-table-cell">
-									<div class="mui-clearfix">
-										<h4 class="oa-contact-name">贾海忠</h4>
-									</div>
-									<p class="oa-contact-email mui-h6">
-										融古今中西·克疑难重危
-									</p>
-									<h6 style="color: #666666;font-size: 14px">肺间质纤维化、肺心病案</h6>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div id="tabbar-with-map" class="mui-control-content">
-                <ul class="mui-table-view mui-table-view-chevron" style="margin: 0;padding: 10px 0;">
-                    <li class="mui-table-view-cell mui-media">
-                        <a class="mui-navigate-right" href="#account">
-                            <img class="mui-media-object mui-pull-left head-img" src="images/de">
-                            <div class="mui-media-body">
-                                郭老师
-                                <p class='mui-ellipsis'>男 / 中医爱好者</p>
+    </div>
+    <div id="tabbar-with-contact" class="mui-control-content">
+        <div class="mui-table-view mui-table-view-chevron" style="display:flex;height:60px;margin:0;">
+            <div class="mui-table-view-cell mui-media" style="flex: 1">
+                <img class="mui-media-object mui-pull-left" src="images/icon1.jpg">
+                <div class="mui-media-body">
+                    讲座活动
+                    <p style="font-size: 11px;">新鲜一手掌握</p>
+                </div>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="mui-table-view-cell mui-media" style="flex: 1">
+                <img class="mui-media-object mui-pull-left" src="images/icon2.jpg">
+                <div class="mui-media-body">
+                    频道
+                    <p style="font-size: 11px;">总有你想要的</p>
+                </div>
+            </div>
+        </div>
+        <div class="mui-h3" style="margin: 20px;">跟师抄方</div>
+        <ul class="mui-table-view mui-table-view-striped mui-table-view-condensed" id="intro">
+            <li class="mui-table-view-cell">
+                <div class="mui-slider-cell">
+                    <div class="oa-contact-cell mui-table">
+                        <div class="oa-contact-avatar mui-table-cell">
+                            <img src="images/黄煌1.png"/>
+                        </div>
+                        <div class="oa-contact-content mui-table-cell">
+                            <div class="mui-clearfix">
+                                <h4 class="oa-contact-name">黄煌</h4>
                             </div>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="mui-table-view mui-table-view-chevron">
-                    <li class="mui-table-view-cell">
-                        <a href="#case" class="mui-navigate-right"><span
-                                class="mui-icon-extra mui-icon-extra-order my-icon"
-                                style="padding: 0 2px;font-size: 18px;"></span>个人医案</a>
-                    </li>
-                </ul>
-                <ul class="mui-table-view mui-table-view-chevron">
-                    <li class="mui-table-view-cell">
-                        <a href="#buy" class="mui-navigate-right"><span
-                                class="mui-icon-extra mui-icon-extra-card my-icon" style="font-size: 21px;"></span>购买记录</a>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <a href="#publish" class="mui-navigate-right"><span
-                                class="mui-icon mui-icon-star my-icon" style="color: #c15d3e;"></span>我的发布</a>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <a href="#collection" class="mui-navigate-right"><span
-                                class="mui-icon mui-icon-paperplane my-icon"></span>收藏</a>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <a href="#download" class="mui-navigate-right"><span
-                                class="mui-icon mui-icon-download my-icon"></span>下载</a>
-                    </li>
-                </ul>
-                <ul class="mui-table-view mui-table-view-chevron">
-                    <li class="mui-table-view-cell">
-                        <a href="#recommend" class="mui-navigate-right"><span
-                                class="mui-icon-extra mui-icon-extra-share my-icon"
-                                style="padding: 0 2px;font-size: 18px;"></span>推荐同行 <i
-                                class="mui-pull-right update">获取现金奖励</i></a>
-                    </li>
-                </ul>
-                <ul class="mui-table-view mui-table-view-chevron">
-                    <li class="mui-table-view-cell">
-                        <a href="#st" class="mui-navigate-right"><span
-                                class="mui-icon mui-icon-gear my-icon"></span>设置</a>
-                    </li>
-                </ul>
-			</div>
-
-		</div>
-
-	</body>
-	<script src="js/mui.min.js"></script>
-	<script>
-		mui.init({
-			swipeBack: true //启用右滑关闭功能
-		});
-		var slider = mui("#slider");
-		slider.slider({
-			interval: 500
-		});
-		var slider1 = mui("#slider1");
-		slider1.slider({
-			interval: 500
-		});
-	</script>
+                            <p class="oa-contact-email mui-h6">
+                                学经方·用经方
+                            </p>
+                            <h6 style="color: #666666;font-size: 14px">头昏案</h6>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-slider-cell">
+                    <div class="oa-contact-cell mui-table">
+                        <div class="oa-contact-avatar mui-table-cell">
+                            <img src="images/肖相如1.png"/>
+                        </div>
+                        <div class="oa-contact-content mui-table-cell">
+                            <div class="mui-clearfix">
+                                <h4 class="oa-contact-name">肖相如</h4>
+                            </div>
+                            <p class="oa-contact-email mui-h6">
+                                活用《伤寒》·尤擅肾病
+                            </p>
+                            <h6 style="color: #666666;font-size: 14px">肛门下坠、走路不稳案</h6>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-slider-cell">
+                    <div class="oa-contact-cell mui-table">
+                        <div class="oa-contact-avatar mui-table-cell">
+                            <img src="images/史欣德1.png"/>
+                        </div>
+                        <div class="oa-contact-content mui-table-cell">
+                            <div class="mui-clearfix">
+                                <h4 class="oa-contact-name">史欣德</h4>
+                            </div>
+                            <p class="oa-contact-email mui-h6">
+                                问诊入微·讲理透彻
+                            </p>
+                            <h6 style="color: #666666;font-size: 14px">瓜蒌枳实汤治疗咳嗽案</h6>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell">
+                <div class="mui-slider-cell">
+                    <div class="oa-contact-cell mui-table">
+                        <div class="oa-contact-avatar mui-table-cell">
+                            <img src="images/贾海忠1.jpg"/>
+                        </div>
+                        <div class="oa-contact-content mui-table-cell">
+                            <div class="mui-clearfix">
+                                <h4 class="oa-contact-name">贾海忠</h4>
+                            </div>
+                            <p class="oa-contact-email mui-h6">
+                                融古今中西·克疑难重危
+                            </p>
+                            <h6 style="color: #666666;font-size: 14px">肺间质纤维化、肺心病案</h6>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="tabbar-with-map" class="mui-control-content">
+        <div class="mui-scroll">
+            <ul class="mui-table-view mui-table-view-chevron" style="margin: 0;padding: 10px 0;">
+                <li class="mui-table-view-cell mui-media">
+                    <a class="mui-navigate-right" href="login.html">
+                        <img class="mui-media-object mui-pull-left head-img" src="images/default.jpg">
+                        <div class="mui-media-body">
+                            郭老师
+                            <p class='mui-ellipsis'>男 / 中医爱好者</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="mui-table-view mui-table-view-chevron">
+                <li class="mui-table-view-cell">
+                    <a href="case.html" class="mui-navigate-right"><span
+                            class="mui-icon-extra mui-icon-extra-order my-icon"
+                            style="padding: 0 2px;font-size: 18px;"></span>个人医案</a>
+                </li>
+            </ul>
+            <ul class="mui-table-view mui-table-view-chevron">
+                <li class="mui-table-view-cell">
+                    <a href="#buy" class="mui-navigate-right"><span
+                            class="mui-icon-extra mui-icon-extra-card my-icon" style="font-size: 21px;"></span>购买记录</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#publish" class="mui-navigate-right"><span
+                            class="mui-icon mui-icon-star my-icon" style="color: #c15d3e;"></span>我的发布</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#collection" class="mui-navigate-right"><span
+                            class="mui-icon mui-icon-paperplane my-icon"></span>收藏</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#download" class="mui-navigate-right"><span
+                            class="mui-icon mui-icon-download my-icon"></span>下载</a>
+                </li>
+            </ul>
+            <ul class="mui-table-view mui-table-view-chevron">
+                <li class="mui-table-view-cell">
+                    <a href="#recommend" class="mui-navigate-right"><span
+                            class="mui-icon-extra mui-icon-extra-share my-icon"
+                            style="padding: 0 2px;font-size: 18px;"></span>推荐同行 <i
+                            class="mui-pull-right update">获取现金奖励</i></a>
+                </li>
+            </ul>
+            <ul class="mui-table-view mui-table-view-chevron">
+                <li class="mui-table-view-cell">
+                    <a href="#st" class="mui-navigate-right"><span
+                            class="mui-icon mui-icon-gear my-icon"></span>设置</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/mui.min.js"></script>
+<script>
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+    var slider = mui("#slider");
+    slider.slider({
+        interval: 500
+    });
+    var slider1 = mui("#slider1");
+    slider1.slider({
+        interval: 500
+    });
+</script>
 
 </html>
