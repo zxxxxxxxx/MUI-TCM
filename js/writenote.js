@@ -162,7 +162,7 @@
         });
     }
 
-    // addEventListeners();
+    addEventListeners();
     showTodos();
 
     if (remoteCouch) {
