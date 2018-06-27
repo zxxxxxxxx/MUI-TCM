@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/icons-extra.css">
+</head>
+
+<body>
+
+<style>
+    .mui-table-view {
+        /*background-color: #f9f8f6;*/
+    }
+
+    .mui-slider-indicator {
+        background-color: white;
+    }
+
+    img#head-img {
+        height: 36px;
+        margin-top: 2px;
+    }
+
+    span.mui-media-object {
+        color: #C15D3E;
+        font-size: 17px;
+        right: 10px;
+    }
+
+    .mui-media-body {
+        font-size: 12px;
+    }
+
+    p.mui-ellipsis {
+        font-size: 13px;
+        font-family: 微软雅黑;
+    }
+
+    li.mui-table-view-cell > a {
+        height: 76px;
+    }
+
+    .font {
+        font-size: 12px;
+        margin: 10px;
+    }
+
+    @font-face {
+        font-family: "MyFont";
+        src: url("fonts/方正清刻本悦宋简.TTF");
+    }
+
+    body {
+        font-family: "MyFont";
+    }
+
+    .mui-icon.mui-icon-trash {
+        margin-top: 10px;
+    }
+
+</style>
+<header class="mui-bar mui-bar-nav" style="background-color: white;">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <a class="mui-pull-right" href="writenote.html"><span class="mui-icon mui-icon-compose"></span></a>
+    <h1 class="mui-title">笔记详情</h1>
+</header>
+<div class="mui-content">
+    <!--<div id="slider" class="mui-slider mui-fullscreen">-->
+    <!--<div id="sliderSegmentedControl"-->
+    <!--class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative"-->
+    <!--style="background-color: white">-->
+    <!--<a class="mui-control-item" href="#item2mobile">-->
+    <!--我的-->
+    <!--</a>-->
+    <!--<a class="mui-control-item" href="#item1mobile">-->
+    <!--精选-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-6"></div>-->
+    <!--<div class="mui-slider-group">-->
+    <!--<div id="item2mobile" class="mui-slider-item mui-control-content mui-active">-->
+    <!--<div id="sync-wrapper" style="display: none;">-->
+    <!--<div id="sync-success">Currently syncing</div>-->
+    <!--<div id="sync-error">There was a problem syncing</div>-->
+    <!--</div>-->
+    <!--<div id="scroll2" class="mui-scroll-wrapper">-->
+    <!--<div class="mui-scroll">-->
+    <!--<ul class="mui-table-view" id="todo-list">-->
+    <!--<div class="mui-page-content" style="background-color: #efeff4;">-->
+    <!--<div style="margin: 150px 0 10px;text-align: center">-->
+    <!--<img src="images/box.png" style="width: 100px;height: 100px;margin: 0 auto;">-->
+    <!--</div>-->
+    <!--<div style="color: #999999;text-align: center;font-size: 14px">-->
+    <!--暂无个人笔记-->
+    <!--</div>-->
+
+    <!--</div>-->
+    <!--<li class="mui-table-view-cell">-->
+    <!--<a>-->
+    <!--<img class="mui-media-object mui-pull-left head-img" src="images/default.jpg">-->
+
+    <!--<span class="mui-media-object mui-pull-right mui-icon-extra mui-icon-extra-like"><span-->
+    <!--class="font">164</span></span>-->
+    <!--<span-->
+    <!--class="mui-pull-right mui-icon mui-icon-trash"></span>-->
+    <!--<div class="mui-media-body">-->
+    <!--郭老师-->
+    <!--<p class="mui-ellipsis">2018-6-26 14:02</p>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--《中医学》凌一揆主编 白术（《本经》）【性味归经】苦、甘，温。归脾，胃经。-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--</div>-->
+    <!--<div id="item1mobile" class="mui-slider-item mui-control-content">-->
+    <!--<div id="scroll1" class="mui-scroll-wrapper">-->
+    <!--<div class="mui-scroll">-->
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a style="margin:0;border-bottom: solid 1px #e3e3e5">
+                <img class="mui-media-object mui-pull-left head-img" src="images/default.jpg">
+                <span class="mui-media-object mui-pull-right mui-icon-extra mui-icon-extra-like"></span>
+                <div class="mui-media-body">
+                    郭老师
+                    <p class="mui-ellipsis">2015-12-16 14:02</p>
+                </div>
+            </a>
+            <div id="todo-list" style="font-size: 14px;margin-top: 10px">
+                <!--《《中药学》凌一揆主编-->
+                <!--  白术  （《本经》）-->
+                <!--【性味归经】苦、甘，温。归脾、胃经。-->
+                <!--【功效】补气健脾，燥湿利水，止汗安胎。-->
+                <!--【应用】-->
+                <!-- 1.-->
+                <!--用于脾气虚弱，运化失常所致食少便溏、脘腹胀满、倦怠无力等证。本品为补气健脾的要药。常与人参、茯苓、炙甘草间用，治脾虚气弱之证，即四君子汤。如睥胃虚寒，脘腹冷痛，大便泄泻者，可配党参、干姜、炙甘草同用，即理中汤。如脾虚而有积滞，食欲不振、脘腹痞满，可以攻补兼施，用白术健脾，配合枳实消除痞满，即枳术丸。-->
+                <!-- 2. 用于脾虚不能运化，水湿停留，而为痰饮水肿等证。本品既可补气健脾，又可燥湿利水，故为治痰饮水肿之良药。如配伍桂枝、茯苓、炙甘草即苓桂术甘汤，可以祛痰饮；配伍陈皮、大腹皮、茯苓皮等，可以消水肿。-->
+            </div>
+        </li>
+    </ul>
+</div>
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<script src="js/mui.min.js"></script>
+<script src="js/pouchdb-6.4.3.min.js"></script>
+<!-- <script src="js/pouchdb.find.min.js"></script> -->
+<script src="js/base.js"></script>
+<script src="js/notedetail.js"></script>
+<script>
+    mui.init({
+        swipeBack: false
+    });
+    (function ($) {
+        $('.mui-scroll-wrapper').scroll({
+            indicators: true //是否显示滚动条
+        });
+    })(mui);
+</script>
+</body>
+
+</html>

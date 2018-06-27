@@ -10,6 +10,7 @@
 
     var db = new PouchDB('note');
     var remoteCouch = 'https://d39f64bb-b370-4ca8-84d2-70ecf2bfe2bc-bluemix:9ce8a9c23ac8f6df065abc280681051f1072a1ae47bc34acc5dfc1055d83b178@d39f64bb-b370-4ca8-84d2-70ecf2bfe2bc-bluemix.cloudant.com/note';
+    var id = window.location.search.split("id=")[1];
 
     db.changes({
         since: 'now',
@@ -33,9 +34,9 @@
 
     // Show the current list of todos by reading them from the database
     function showTodos() {
-        db.allDocs({include_docs: true, descending: true}, function (err, doc) {
-            console.log(doc.rows);
-            redrawTodosUI(doc.rows);
+        db.get(id).then(function (doc) {
+            console.log(doc);
+            redrawTodosUI(doc);
         });
     }
 
@@ -124,7 +125,6 @@
         divDisplay.appendChild(p);
 
         var ahref = document.createElement('a');
-        ahref.href = 'notedetail.html?id=' + todo._id;
         ahref.appendChild(img);
         ahref.appendChild(span1);
         ahref.appendChild(span2);
@@ -141,11 +141,13 @@
     }
 
     function redrawTodosUI(todos) {
-        var ul = document.getElementById('todo-list');
-        if (todos.length > 0) ul.innerHTML = '';
-        todos.forEach(function (todo) {
-            ul.appendChild(createTodoListItem(todo.doc));
-        });
+        var div = document.getElementById('todo-list');
+        div.innerHTML = '';
+        div.appendChild(document.createTextNode(todos.content));
+        // if (todos.length > 0) ul.innerHTML = '';
+        // todos.forEach(function (todo) {
+        //     ul.appendChild(createTodoListItem(todo.doc));
+        // });
     }
 
     function newTodoKeyPressHandler(event) {
@@ -156,8 +158,8 @@
     }
 
     function addEventListeners() {
-        var addNote = document.getElementById('add');
-        addNote.addEventListener('click', function (event) {
+        var modifyNote = document.getElementById('modify');
+        modifyNote.addEventListener('click', function (event) {
             addTodo(newTodoDom.value);
             newTodoDom.value = '';
         });
