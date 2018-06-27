@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <style>
+        .title {
+            margin: 10px 15px 10px;
+            color: #6d6d72;
+            font-size: 14px;
+        }
+
+        .mui-table-view-cell.mui-media .mui-media-body {
+            font-size: 15px;
+        }
+
+        .mui-collapse .mui-navigate-right:after {
+            right: 152px;
+            /*color: #c15d3e;*/
+        }
+
+        textarea {
+            margin: 0 18px;
+            height: 500px;
+            width: 90%;
+        }
+
+        @font-face {
+            font-family: "MyFont";
+            src: url("fonts/方正清刻本悦宋简.TTF");
+        }
+
+        body {
+            font-family: "MyFont";
+        }
+
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <a class="mui-pull-right" style="margin-top: 12px" id="add">提交</a>
+    <h1 class="mui-title">写笔记</h1>
+</header>
+
+<div class="mui-content">
+    <div id="sync-wrapper" style="display: none;">
+        <div id="sync-success">Currently syncing</div>
+        <div id="sync-error">There was a problem syncing</div>
+    </div>
+
+    <center class="title" style="color:#c15d3e;">
+        在电脑上写笔记
+    </center>
+    <textarea id="new-todo" placeholder="请写入笔记" autofocus></textarea>
+</div>
+</div>
+
+</body>
+<script src="js/mui.min.js"></script>
+<script src="js/pouchdb-6.4.3.min.js"></script>
+<script src="js/base.js"></script>
+<script src="js/note.js"></script>
+<script>
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+    (function ($) {
+        $('.mui-scroll-wrapper').scroll({
+            indicators: true //是否显示滚动条
+        });
+    })(mui);
+</script>

@@ -1,185 +1,202 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title></title>
-		<!--标准mui.css-->
-		<link rel="stylesheet" href="css/mui.min.css">
-		<!--App自定义的css-->
-		<link rel="stylesheet" type="text/css" href="css/app.css" />
-		<link href="css/mui.picker.css" rel="stylesheet" />
-		<link href="css/mui.poppicker.css" rel="stylesheet" />
-		<!--<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />-->
-		<style>
-			body {
-				background-color: #f8f7f5;
-			}
-			
-			.mui-content {
-				background-color: white;
-				height: 330px;
-			}
-			
-			.mui-btn {
-				font-size: 16px;
-				padding: 8px;
-				margin: 3px;
-			}
-			
-			h5.mui-content-padded {
-				margin-left: 3px;
-				margin-top: 20px !important;
-			}
-			
-			h5.mui-content-padded:first-child {
-				margin-top: 12px !important;
-			}
-			
-			.ui-alert {
-				text-align: center;
-				padding: 20px 10px;
-				font-size: 16px;
-			}
-			
-			.mui-input-clear.border-none {
-				border: none;
-				margin-bottom: 0;
-			}
-			
-			.my-input {
-				flex: 1;
-				display: flex;
-				border-bottom: 1px solid #e3e3e5;
-				margin-right: 10px;
-				margin-left: 10px;
-			}
-			
-			li {
-				list-style-type: none;
-				margin: 5px;
-			}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title></title>
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <link href="css/mui.picker.css" rel="stylesheet"/>
+    <link href="css/mui.poppicker.css" rel="stylesheet"/>
+    <!--<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />-->
+    <style>
+        body {
+            background-color: #f8f7f5;
+        }
 
-			.mui-poppicker-btn-ok {
-				background-color: #c15d3e;
-				border:1px solid #c15d3e;
-			}
-		</style>
-	</head>
+        .mui-content {
+            background-color: white;
+            height: 330px;
+        }
 
-	<body>
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">计量转换</h1>
-		</header>
-		<div class="mui-content">
-			<div class="mui-content-padded" style="display: flex;margin-top: 100px;">
-				<div class="my-input">
-					<input id="showDynastyPicker" class="mui-input-clear border-none" type='text' value="汉" style="width: 80%;">
-					<div class="mui-icon mui-icon-arrowdown" style="font-size: 10px;width: 20%;margin-top: 15px;"></div>
-				</div>
-				<div style="flex: 2.5;border-bottom: 1px solid #e3e3e5;">
-					<input class="mui-input-clear border-none" type='number' value="123" style="flex: 2.5;font-size: 30px;color:#c15d3e" autofocus="true">
-				</div>
-				<div class="my-input">
-					<input id="showWeightPicker" class="mui-input-clear border-none" type='text' value="两" style="width: 80%;">
-					<div class="mui-icon mui-icon-arrowdown" style="font-size: 10px;width: 20%;margin-top: 15px;"></div>
-				</div>
-			</div>
-			<div class="mui-content-padded" style="display: flex;margin-top: 60px;">
-				<div class="my-input" style="border: none;">
-					<input class="mui-input-clear border-none" type='text'></div>
-				<div style="flex: 2.5;border-bottom: 1px solid #e3e3e5;">
-					<input class="mui-input-clear border-none" type='number' disabled="true" value="123" style="font-size: 30px;color:#c15d3e">
-				</div>
-				<div class="my-input">
-					<input class="mui-input-clear border-none" type='text' value="克">
-				</div>
-			</div>
-		</div>
-		<center style="color: #b2987f;margin: 20px;font-size: 11px;">
-			<!--<ul>-->
-				<li>梧桐子大 = 黄豆大</li>
-				<li>1方寸匙 = 金石类2.74克 = 药末约2克 = 草本类药末约1克</li>
-				<li>蜀椒一升 = 50克</li>
-				<li>半方寸匙 = 1.5克</li>
-				<li>葶苈子一升 = 60克</li>
-				<li>一钱匙 = 1.5-1.8克</li>
-				<li>吴茱萸一升 = 50克</li>
-				<li>五味子一升 = 50克</li>
-				<li>一铢 = 100个黍米的重量</li>
-				<li>半夏一升 = 130克</li>
-				<li>虻虫一升 = 16克</li>
-				<li>附子大者1枚 = 20-30克</li>
-				<li>附子中者1枚 = 15克</li>
-				<li>强乌头1枚小者 = 3克</li>
-				<li>强乌头1枚大者 = 5-6克</li>
-			<!--</ul>-->
-		</center>
+        .mui-input-clear.border-none {
+            border: none;
+            margin-bottom: 0;
+        }
 
-		<script src="js/mui.min.js"></script>
-		<!--<script src="js/mui.picker.min.js"></script>-->
-		<script src="js/mui.picker.js"></script>
-		<script src="js/mui.poppicker.js"></script>
-		<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
-		<script>
-			(function($, doc) {
-				$.init();
-				$.ready(function() {
-					/**
-					 * 获取对象属性的值
-					 * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
-					 * @param {Object} obj 对象
-					 * @param {String} param 属性名
-					 */
-					var _getParam = function(obj, param) {
-						return obj[param] || '';
-					};
-					//普通示例
-					var dynastyPicker = new $.PopPicker();
-					dynastyPicker.setData([{
-						value: 'han',
-						text: '汉'
-					}, {
-						value: 'song',
-						text: '宋'
-					}]);
-					var showDynastyPickerButton = doc.getElementById('showDynastyPicker');
-					showDynastyPickerButton.addEventListener('tap', function(event) {
-						dynastyPicker.show(function(items) {
-							showDynastyPickerButton.value = items[0].text;
-							//返回 false 可以阻止选择框的关闭
-							//return false;
-						});
-					}, false);
-					//					var _getParam = function(obj, param) {
-					//						return obj[param] || '';
-					//					};
-					//普通示例
-					var weightPicker = new $.PopPicker();
-					weightPicker.setData([{
-						value: 'liang',
-						text: '两'
-					}, {
-						value: 'shi',
-						text: '石'
-					}, {
-						value: 'jin',
-						text: '斤'
-					}]);
-					var showWeightPickerButton = doc.getElementById('showWeightPicker');
-					showWeightPickerButton.addEventListener('tap', function(event) {
-						weightPicker.show(function(items) {
-							showWeightPickerButton.value = items[0].text;
-							//返回 false 可以阻止选择框的关闭
-							//return false;
-						});
-					}, false);
-				});
-			})(mui, document);
-		</script>
-	</body>
+        .my-input {
+            flex: 1;
+            display: flex;
+            border-bottom: 1px solid #e3e3e5;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        li {
+            list-style-type: none;
+            margin: 5px;
+        }
+
+        .mui-poppicker-btn-ok {
+            background-color: #c15d3e;
+            border: 1px solid #c15d3e;
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">计量转换</h1>
+</header>
+<div class="mui-content">
+    <div class="mui-content-padded" style="display: flex;margin-top: 100px;">
+        <div class="my-input">
+            <input id="showDynastyPicker" class="mui-input-clear border-none" type='text' value="汉" style="width: 80%;">
+            <div class="mui-icon mui-icon-arrowdown" style="font-size: 10px;width: 20%;margin-top: 15px;"></div>
+        </div>
+        <div style="flex: 2.6;border-bottom: 1px solid #e3e3e5;">
+            <input id="top" class="mui-input-clear border-none" type='number' value=""
+                   style="font-size: 30px;color:#c15d3e;text-align: center;" autofocus="true">
+        </div>
+        <div class="my-input">
+            <input id="showWeightPicker" class="mui-input-clear border-none" type='text' value="两" style="width: 80%;">
+            <div class="mui-icon mui-icon-arrowdown" style="font-size: 10px;width: 20%;margin-top: 15px;"></div>
+        </div>
+    </div>
+    <div class="mui-content-padded" style="display: flex;margin-top: 60px;">
+        <div class="my-input" style="border: none;">
+            <input class="mui-input-clear border-none" type='text'></div>
+        <div style="flex: 2.6;border-bottom: 1px solid #e3e3e5;">
+            <input id="bottom" class="mui-input-clear border-none" type='number' disabled="true" value=""
+                   style="font-size: 30px;color:#c15d3e;text-align: center;">
+        </div>
+        <div class="my-input">
+            <input class="mui-input-clear border-none" type='text' value="克">
+        </div>
+    </div>
+</div>
+<center style="color: #b2987f;margin: 20px;font-size: 11px;">
+    <!--<ul>-->
+    <li>梧桐子大 = 黄豆大</li>
+    <li>1方寸匙 = 金石类2.74克 = 药末约2克 = 草本类药末约1克</li>
+    <li>蜀椒一升 = 50克</li>
+    <li>半方寸匙 = 1.5克</li>
+    <li>葶苈子一升 = 60克</li>
+    <li>一钱匙 = 1.5-1.8克</li>
+    <li>吴茱萸一升 = 50克</li>
+    <li>五味子一升 = 50克</li>
+    <li>一铢 = 100个黍米的重量</li>
+    <li>半夏一升 = 130克</li>
+    <li>虻虫一升 = 16克</li>
+    <li>附子大者1枚 = 20-30克</li>
+    <li>附子中者1枚 = 15克</li>
+    <li>强乌头1枚小者 = 3克</li>
+    <li>强乌头1枚大者 = 5-6克</li>
+    <!--</ul>-->
+</center>
+
+<script src="js/mui.min.js"></script>
+<!--<script src="js/mui.picker.min.js"></script>-->
+<script src="js/mui.picker.js"></script>
+<script src="js/mui.poppicker.js"></script>
+<script src="js/city.data.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    (function ($, doc) {
+        $.init();
+        $.ready(function () {
+            /**
+             * 获取对象属性的值
+             * 主要用于过滤三级联动中，可能出现的最低级的数据不存在的情况，实际开发中需要注意这一点；
+             * @param {Object} obj 对象
+             * @param {String} param 属性名
+             */
+            var _getParam = function (obj, param) {
+                return obj[param] || '';
+            };
+            //普通示例
+            var dynastyPicker = new $.PopPicker();
+            dynastyPicker.setData([{
+                value: 'han',
+                text: '汉'
+            }, {
+                value: 'song',
+                text: '宋'
+            }]);
+            var inputKe = doc.getElementById('bottom');
+            var inputChange = doc.getElementById('top');
+            var showDynastyPickerButton = doc.getElementById('showDynastyPicker');
+            showDynastyPickerButton.addEventListener('tap', function (event) {
+                dynastyPicker.show(function (items) {
+                    showDynastyPickerButton.value = items[0].text;
+                    //返回 false 可以阻止选择框的关闭
+                    //return false;
+                    if (inputChange.value === '') inputKe.value = '';
+                    else if (showDynastyPickerButton.value === '汉') {
+                        if (showWeightPickerButton.value === '两') inputKe.value = inputChange.value * 15.625;
+                        else if (showWeightPickerButton.value === '石') inputKe.value = inputChange.value * 29760;
+                        else if (showWeightPickerButton.value === '斤') inputKe.value = inputChange.value * 248;
+                    } else if (showDynastyPickerButton.value === '宋') {
+                        if (showWeightPickerButton.value === '两') inputKe.value = inputChange.value * 36.9;
+                        else if (showWeightPickerButton.value === '石') inputKe.value = inputChange.value * 70800;
+                        else if (showWeightPickerButton.value === '斤') inputKe.value = inputChange.value * 590;
+                    }
+                });
+            }, false);
+            //					var _getParam = function(obj, param) {
+            //						return obj[param] || '';
+            //					};
+            //普通示例
+            var weightPicker = new $.PopPicker();
+            weightPicker.setData([{
+                value: 'liang',
+                text: '两'
+            }, {
+                value: 'shi',
+                text: '石'
+            }, {
+                value: 'jin',
+                text: '斤'
+            }]);
+            var showWeightPickerButton = doc.getElementById('showWeightPicker');
+            showWeightPickerButton.addEventListener('tap', function (event) {
+                weightPicker.show(function (items) {
+                    showWeightPickerButton.value = items[0].text;
+                    //返回 false 可以阻止选择框的关闭
+                    //return false;
+                    if (inputChange.value === '') inputKe.value = '';
+                    else if (showDynastyPickerButton.value === '汉') {
+                        if (showWeightPickerButton.value === '两') inputKe.value = inputChange.value * 15.625;
+                        else if (showWeightPickerButton.value === '石') inputKe.value = inputChange.value * 29760;
+                        else if (showWeightPickerButton.value === '斤') inputKe.value = inputChange.value * 248;
+                    } else if (showDynastyPickerButton.value === '宋') {
+                        if (showWeightPickerButton.value === '两') inputKe.value = inputChange.value * 36.9;
+                        else if (showWeightPickerButton.value === '石') inputKe.value = inputChange.value * 70800;
+                        else if (showWeightPickerButton.value === '斤') inputKe.value = inputChange.value * 590;
+                    }
+
+                });
+            }, false);
+            inputChange.addEventListener('input', function () {
+                if (inputChange.value === '') inputKe.value = '';
+                else if (showDynastyPickerButton.value === '汉') {
+                    if (showWeightPickerButton.value === '两') inputKe.value = inputChange.value * 15.625;
+                    else if (showWeightPickerButton.value === '石') inputKe.value = inputChange.value * 29760;
+                    else if (showWeightPickerButton.value === '斤') inputKe.value = inputChange.value * 248;
+                } else if (showDynastyPickerButton.value === '宋') {
+                    if (showWeightPickerButton.value === '两') inputKe.value = inputChange.value * 36.9;
+                    else if (showWeightPickerButton.value === '石') inputKe.value = inputChange.value * 70800;
+                    else if (showWeightPickerButton.value === '斤') inputKe.value = inputChange.value * 590;
+                }
+            });
+        });
+    })(mui, document);
+</script>
+</body>
 
 </html>

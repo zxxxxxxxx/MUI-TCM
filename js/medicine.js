@@ -36,7 +36,7 @@
   function showTodos() {
     db.get(id).then(function (doc) {
       redrawTodosUI(doc);
-      // console.log(doc);
+      console.log(doc);
     });
   }
 

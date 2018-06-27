@@ -56,6 +56,7 @@
 	</style>
 	<header class="mui-bar mui-bar-nav">
 		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<a class="mui-icon mui-icon-compose mui-pull-right" href="note.html"></a>
 		<h1 class="mui-title" id="medicine-header">药</h1>
 	</header>
 	<div class="mui-content">
@@ -203,6 +204,7 @@
 	<script src="js/base.js"></script>
 	<script src="js/medicine.js"></script>
 	<script>
+        document.querySelector(".mui-control-item").setAttribute("class", "mui-control-item mui-active");
 		mui.init({
 			swipeBack: false
 		});

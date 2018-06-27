@@ -150,9 +150,7 @@
 </div>
 <script src="js/mui.min.js"></script>
 <script>
-    mui.plusReady(function () {
-        mui('.mui-scroll-wrapper').scroll().refresh(true);
-    });
+    document.querySelector(".mui-control-item").setAttribute("class", "mui-control-item mui-active");
     mui.init({
         swipeBack: false
     });

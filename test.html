@@ -95,7 +95,7 @@
 			}
 			
 			.mui-media-body {
-				font-size: 12px;
+				font-size: 14px;
 			}
 		</style>
 	</head>
@@ -106,25 +106,21 @@
 			<!--<a class="mui-icon mui-icon-search mui-pull-right" id="open"></a>-->
 			<h1 class="mui-title">大家</h1>
 		</header>
-		<div id="sync-wrapper" style="display: none;">
-			<div id="sync-success">Currently syncing</div>
-			<div id="sync-error">There was a problem syncing</div>
-		</div>
 		<div class="mui-content">
-			<div class="mui-table-view mui-table-view-chevron" style="display:inline-flex;height:60px;margin:0;">
-				<div class="mui-table-view-cell mui-media">
+			<div class="mui-table-view mui-table-view-chevron" style="display:flex;height:60px;margin:0;">
+				<div class="mui-table-view-cell mui-media" style="flex: 1">
 					<img class="mui-media-object mui-pull-left" src="images/icon1.jpg">
 					<div class="mui-media-body">
 						讲座活动
-						<p style="font-size: 10px;">一手掌握</p>
+						<p style="font-size: 11px;">新鲜一手掌握</p>
 					</div>
 				</div>
 				<div class="vertical-line"></div>
-				<div class="mui-table-view-cell mui-media">
+				<div class="mui-table-view-cell mui-media" style="flex: 1">
 					<img class="mui-media-object mui-pull-left" src="images/icon2.jpg">
 					<div class="mui-media-body">
 						频道
-						<p style="font-size: 10px;">总有你要的</p>
+						<p style="font-size: 11px;">总有你想要的</p>
 					</div>
 				</div>
 			</div>
@@ -143,12 +139,203 @@
 								<p class="oa-contact-email mui-h6">
 									学经方·用经方
 								</p>
-								<h6 class="">头昏案</h6>
+								<h6 style="color: #666666;font-size: 14px">头昏案</h6>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="images/肖相如1.png" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">肖相如</h4>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									活用《伤寒》·尤擅肾病
+								</p>
+								<h6 style="color: #666666;font-size: 14px">肛门下坠、走路不稳案</h6>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="images/史欣德1.png" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">史欣德</h4>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									问诊入微·讲理透彻
+								</p>
+								<h6 style="color: #666666;font-size: 14px">瓜蒌枳实汤治疗咳嗽案</h6>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="images/贾海忠1.jpg" />
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix">
+									<h4 class="oa-contact-name">贾海忠</h4>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									融古今中西·克疑难重危
+								</p>
+								<h6 style="color: #666666;font-size: 14px">肺间质纤维化、肺心病案</h6>
 							</div>
 						</div>
 					</div>
 				</li>
 			</ul>
+		</div>
+		<div id="case" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>我的
+				</button>
+				<h1 class="mui-center mui-title">个人医案</h1>
+			</div>
+			<div class="mui-page-content">
+				<div style="margin: 150px 0 10px;text-align: center">
+					<img src="images/box.png" style="width: 100px;height: 100px;margin: 0 auto;">
+				</div>
+				<div style="color: #999999;text-align: center;font-size: 14px">
+					每个医案都是您的作品
+				</div>
+			</div>
+		</div>
+		<div id="buy" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>我的
+				</button>
+				<h1 class="mui-center mui-title">购买记录</h1>
+			</div>
+			<div class="mui-page-content">
+				<div style="margin: 150px 0 10px;text-align: center">
+					<img src="images/box.png" style="width: 100px;height: 100px;margin: 0 auto;">
+				</div>
+				<div style="color: #999999;text-align: center;font-size: 14px">
+					您暂时没有购买记录
+				</div>
+			</div>
+		</div>
+		<div id="publish" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>我的
+				</button>
+				<h1 class="mui-center mui-title">我的发布</h1>
+			</div>
+			<div class="mui-page-content">
+				<div style="margin: 150px 0 10px;text-align: center">
+					<img src="images/box.png" style="width: 100px;height: 100px;margin: 0 auto;">
+				</div>
+				<div style="color: #999999;text-align: center;font-size: 14px">
+					暂无文章
+				</div>
+			</div>
+		</div>
+		<div id="collection" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>我的
+				</button>
+				<h1 class="mui-center mui-title">我的收藏</h1>
+			</div>
+			<div class="mui-page-content">
+				<div style="margin: 150px 0 10px;text-align: center">
+					<img src="images/box.png" style="width: 100px;height: 100px;margin: 0 auto;">
+				</div>
+				<div style="color: #999999;text-align: center;font-size: 14px">
+					暂无收藏
+				</div>
+			</div>
+		</div>
+		<div id="download" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>我的
+				</button>
+				<h1 class="mui-center mui-title">下载中心</h1>
+			</div>
+			<div class="mui-page-content">
+				<div style="margin: 150px 0 10px;text-align: center">
+					<img src="images/box.png" style="width: 100px;height: 100px;margin: 0 auto;">
+				</div>
+				<div style="color: #999999;text-align: center;font-size: 14px">
+					暂无内容
+				</div>
+			</div>
+		</div>
+		<div id="recommend" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>我的
+				</button>
+				<h1 class="mui-center mui-title">推荐同行</h1>
+			</div>
+			<div class="mui-page-content">
+				<div>
+					<img src="images/share.png" style="width: 100%;height:100%;">
+				</div>
+			</div>
+		</div>
+		<div id="st" class="mui-page">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>我的
+				</button>
+				<h1 class="mui-center mui-title">设置</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">手机号码 <i
+										class="mui-pull-right update">158****3376</i></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">微信 <i
+										class="mui-pull-right update">未绑定</i></a>
+							</li>
+						</ul>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">正文字号 <i
+										class="mui-pull-right update">正常</i></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">推送消息设置</a>
+							</li>
+						</ul>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">意见反馈</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">给大家中医评分鼓励</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">关于</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</body>
@@ -158,7 +345,3 @@
 			swipeBack: true //启用右滑关闭功能
 		});
 	</script>
-	<script src="js/pouchdb-6.4.3.min.js"></script>
-	<script src="js/base.js"></script>
-	<script src="js/test.js"></script>
-	<script>
