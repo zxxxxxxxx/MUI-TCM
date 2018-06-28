@@ -110,7 +110,7 @@
         var img = document.createElement('img');
         img.className = 'mui-media-object mui-pull-left';
         img.style = 'width:80px';
-        img.src = 'images/' + todo._id + '.jpg';
+        img.src = todo.picture;
 
         var a = document.createElement('a');
         a.className = 'mui-navigate-right';

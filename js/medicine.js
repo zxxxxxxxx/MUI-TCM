@@ -96,7 +96,7 @@
 
   function createMedicineImage(todo) {
     var img = document.createElement('img');
-    img.src = 'images/' + todo._id + '.jpg';
+    img.src = todo.picture;
 
     var li = document.createElement('li');
     li.className = 'mui-table-view-cell';
