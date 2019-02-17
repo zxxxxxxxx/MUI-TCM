@@ -38,4 +38,14 @@ WEB程序设计和跨平台脚本开发两门课合在一起的课程设计，�
 <img src="http://bmob-cdn-20619.b0.upaiyun.com/2019/02/17/1b39307e40d47e4380f1d1b209b6f773.jpg" width="320px">
 </p>
 
-## 开发环境：
+<p>
+<img src="http://bmob-cdn-20619.b0.upaiyun.com/2019/02/17/12fb590040e89a8780f1baab2343ebcb.jpg" width="320px">
+</p>
+
+## 开发工具：
+- [MUI](https://github.com/dcloudio/mui)
+- [PouchDB](https://pouchdb.com/)
+- [IBM Cloudant](https://www.ibm.com/cloud/cloudant)
+
+## 说几句：
+当初查PWA时建议使用pouchdb，可以做到离线访问，因为没时间做后端刚好IBM有个云数据库可以用，果断上手。一用发现，只有英文文档，而且IBM访问速度略慢，好像国内对PWA也并不是很感兴趣，所以劝退。
